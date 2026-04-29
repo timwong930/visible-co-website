@@ -11,16 +11,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
-    :root, [data-theme="light"] {
+    :root, [data-theme="dark"] {
       --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
       --text-base: clamp(1rem, 0.96rem + 0.22vw, 1.125rem);
       --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.45rem);
       --text-xl: clamp(1.7rem, 1.25rem + 1.8vw, 2.7rem);
-      --text-2xl: clamp(2.4rem, 1.6rem + 3.2vw, 4.2rem);
+      --text-2xl: clamp(2.3rem, 1.55rem + 3.1vw, 4.15rem);
       --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
       --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
       --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #050816;
+      --color-surface: rgba(11, 16, 31, 0.88);
+      --color-surface-soft: rgba(14, 20, 39, 0.86);
+      --color-surface-pill: rgba(18, 25, 45, 0.9);
+      --color-border: rgba(146, 177, 255, 0.18);
+      --color-border-soft: rgba(146, 177, 255, 0.09);
+      --color-divider: rgba(146, 177, 255, 0.12);
+      --color-text: #f3f6ff;
+      --color-text-muted: #c1ccf0;
+      --color-text-faint: #8c9ac2;
+      --color-primary: #7da7ff;
+      --color-primary-soft: rgba(125, 167, 255, 0.16);
+      --color-primary-strong: #4a7dff;
+      --color-accent: #9bbaff;
+      --color-danger: #ff7d7d;
+      --color-success: #7ed4aa;
+      --shadow-soft: 0 30px 90px rgba(0, 0, 0, 0.38);
+      --shadow-pill: 0 16px 38px rgba(0, 0, 0, 0.32);
+      --radius-pill: 999px;
+      --radius-lg: 1.6rem;
+      --radius-card: 1.8rem;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --content-max: 1160px;
+    }
+
+    [data-theme="light"] {
       --color-bg: #f4f5f7;
       --color-surface: rgba(255, 255, 255, 0.94);
       --color-surface-soft: rgba(248, 250, 255, 0.9);
@@ -35,20 +62,8 @@
       --color-primary-soft: rgba(46, 102, 202, 0.14);
       --color-primary-strong: #173e8f;
       --color-accent: #3a78dd;
-      --color-danger: #ff6767;
-      --color-success: #7ed4aa;
       --shadow-soft: 0 26px 80px rgba(13, 31, 74, 0.08);
       --shadow-pill: 0 16px 38px rgba(13, 31, 74, 0.14);
-      --radius-pill: 999px;
-      --radius-lg: 1.6rem;
-      --radius-card: 1.8rem;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      --content-max: 1160px;
-    }
-
-    [data-theme="dark"] {
-      /* Already dark by default, keep same tokens so toggle just inverts overlays if needed later */
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
