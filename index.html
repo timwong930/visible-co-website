@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visible Co — Business Visibility & Online Presence</title>
-  <meta name="description" content="Mobile-first landing page for Visible Co, helping businesses improve discoverability, website clarity, and online presence management." />
+  <title>Madevisibly — Business Visibility & Online Presence</title>
+  <meta name="description" content="Mobile-first landing page for Madevisibly, helping businesses improve discoverability, website clarity, and online presence management." />
   <meta name="theme-color" content="#050816" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,11 +304,136 @@
       object-position: center;
       filter: saturate(0.9) contrast(1.02) brightness(0.86);
     }
+    .hero-availability {
+      color: var(--color-accent-soft);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
 
     .hero-right-col {
       display: grid;
       gap: 1rem;
     }
+    .mockup-shell {
+      display: grid;
+      gap: 0.9rem;
+      padding: 1rem;
+      border-radius: var(--radius-card);
+      border: 1px solid rgba(146, 177, 255, 0.12);
+      background: linear-gradient(180deg, rgba(12, 18, 34, 0.92), rgba(8, 12, 24, 0.88));
+      box-shadow: var(--shadow-soft);
+    }
+    .mockup-window {
+      border-radius: 1.15rem;
+      overflow: hidden;
+      border: 1px solid rgba(146, 177, 255, 0.12);
+      background: rgba(8, 12, 24, 0.95);
+      min-height: 150px;
+      position: relative;
+    }
+    .mockup-window::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(83, 137, 255, 0.2), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(160, 204, 255, 0.16), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,0.05), transparent 42%);
+      pointer-events: none;
+    }
+    .mockup-window .mockup-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0.9rem 0.65rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .mockup-window .mockup-body {
+      padding: 0 0.9rem 0.9rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .mockup-chip-row { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+    .mockup-chip-row span {
+      padding: 0.3rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: rgba(18, 25, 45, 0.92);
+      border: 1px solid rgba(146, 177, 255, 0.12);
+      color: var(--color-text-muted);
+      font-size: 0.72rem;
+    }
+    .mockup-metric {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+    .mockup-metric span {
+      border-radius: 0.85rem;
+      background: rgba(18, 25, 45, 0.92);
+      border: 1px solid rgba(146, 177, 255, 0.12);
+      padding: 0.55rem 0.5rem;
+      font-size: 0.72rem;
+      line-height: 1.2;
+      color: var(--color-text);
+    }
+    .mockup-caption {
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      line-height: 1.4;
+    }
+    .demo-section-note {
+      max-width: 60ch;
+      color: var(--color-text-muted);
+      margin-top: 0.4rem;
+    }
+    .demo-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .demo-card {
+      overflow: hidden;
+      padding: 0;
+    }
+    .demo-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(146, 177, 255, 0.12);
+    }
+    .demo-card .demo-copy {
+      padding: 1rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .demo-card h3 { margin: 0; }
+    .testimonial-card {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.1rem 1.1rem 1rem;
+      border-radius: var(--radius-card);
+      background: rgba(14, 20, 39, 0.84);
+      border: 1px solid rgba(146, 177, 255, 0.12);
+      box-shadow: var(--shadow-soft);
+    }
+    .testimonial-card p { color: var(--color-text-muted); }
+    .testimonial-card strong { font-family: var(--font-display); font-size: 1.05rem; }
+    .plan-price {
+      margin-top: 0.8rem;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      color: var(--color-text);
+    }
+    .price-intro {
+      margin-top: 0.55rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
     .hero-metrics {
       margin-top: 1.5rem;
     }
@@ -321,7 +446,7 @@
     }
     .metric-card {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 0.9rem;
       font-size: var(--text-sm);
     }
@@ -555,8 +680,8 @@
       .hero-right-col {
         margin-top: 0;
       }
-      .hero-metrics {
-        grid-template-columns: repeat(4, minmax(0,1fr));
+        .hero-metrics {
+        grid-template-columns: repeat(3, minmax(0,1fr));
         margin-top: 2rem;
       }
       section {
@@ -668,18 +793,17 @@
   <div class="page-shell">
     <header class="nav">
       <div class="container nav-inner">
-        <a href="#top" class="brand" aria-label="Visible Co home">
+        <a href="#top" class="brand" aria-label="Madevisibly home">
           <div class="brand-mark" aria-hidden="true">
             <img src="47E3090F-E864-4F16-B301-7580C500A83B.jpeg" alt="" />
           </div>
           <div class="brand-text">
-            <strong>VISIBLE CO</strong>
+            <strong>MADEVISIBLY</strong>
             <span>Visibility systems for growing businesses</span>
           </div>
         </a>
         <div class="nav-actions">
-          <a href="#pricing" class="ghost-btn">Pricing</a>
-          <a href="#services" class="pill-btn">See how it works</a>
+          <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn">Book Your Free 15-Min Audit</a>
         </div>
       </div>
     </header>
@@ -690,14 +814,14 @@
           <div>
             <div class="hero-tagline"><span>📍</span><span>Built for service and local businesses</span></div>
             <div class="hero-heading">
-              <h1>Your business shouldn't lose customers because key info is hard to find.</h1>
-              <p>Visible Co improves how your business appears online, from map listings to website clarity, so customers can quickly understand your services and take action.</p>
+              <h1>Turn local searches into booked customers.</h1>
+              <p>Madevisibly fixes the online details that send prospects to competitors so your business shows up clearly, converts faster, and wins more calls.</p>
             </div>
             <div class="hero-meta">
               <div class="hero-cta-row">
-                <a href="#services" class="primary-btn">Explore our services <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="margin-left:0.2rem;"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <a href="#interest" class="ghost-btn">Join the waitlist</a>
+                <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn">Book Your Free 15-Min Audit <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="margin-left:0.2rem;"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               </div>
+              <p class="hero-availability">Currently accepting 3 new clients in the Los Angeles area.</p>
               <div class="hero-quick">
                 <span>
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-6 7-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.18"/></svg>
@@ -715,7 +839,7 @@
             </div>
             <div class="hero-strip">
               <div class="hero-strip-row">
-                <span>We act as your outsourced visibility team:</span>
+                <span>We fix the details that make people choose a competitor.</span>
               </div>
               <div class="hero-strip-pills">
                 <span>Audit search listings and customer paths</span>
@@ -727,11 +851,32 @@
           </div>
 
           <div class="hero-right-col">
-          <div class="hero-visual">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Team meeting around a table reviewing strategy for growth" loading="lazy" decoding="async" />
+            <div class="mockup-shell">
+              <div class="mockup-window">
+                <div class="mockup-top"><span>Google profile</span><span>before / after</span></div>
+                <div class="mockup-body">
+                  <div class="mockup-chip-row">
+                    <span>4.8 ★</span><span>Calls up 32%</span><span>Hours fixed</span>
+                  </div>
+                  <div class="mockup-metric">
+                    <span>Cleaner category setup</span>
+                    <span>Photos refreshed</span>
+                    <span>Directions easier</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mockup-window">
+                <div class="mockup-top"><span>Website clarity</span><span>mobile first</span></div>
+                <div class="mockup-body">
+                  <div class="mockup-chip-row">
+                    <span>Services visible</span><span>CTA above fold</span><span>Fast scan</span>
+                  </div>
+                  <div class="mockup-caption">Abstract UI mockup showing the kind of landing page cleanup we build before onboarding.</div>
+                </div>
+              </div>
             </div>
             <article class="flow-card">
-              <h2>What we handle each month stays simple on your side.</h2>
+              <h2>We keep the monthly work simple on your side.</h2>
               <div class="flow-steps">
                 <span>Audit discoverability across maps, search, and website</span>
                 <span>Refresh pages so services and offers are always clear</span>
@@ -743,22 +888,53 @@
         </div>
         <article class="metric-card hero-metrics">
           <div class="metric">
-            <strong>24h</strong>
-            <span>Typical turnaround for listing and website updates — nothing sits stale.</span>
-          </div>
-          <div class="metric">
-            <strong>3 plans</strong>
-            <span>Simple service tiers designed to be easy to compare.</span>
+            <strong>3x</strong>
+            <span>avg. Google profile views in 60 days</span>
           </div>
           <div class="metric">
             <strong>48h</strong>
-            <span>Priority update window on the Premium plan.</span>
+            <span>average setup turnaround</span>
           </div>
           <div class="metric">
-            <strong>1 focus</strong>
-            <span>Built for real businesses — no bloated contracts or enterprise lock-in.</span>
+            <strong>Local only</strong>
+            <span>no enterprise fluff</span>
           </div>
         </article>
+        <article class="testimonial-card" style="margin-top: 1rem;">
+          <strong>"Placeholder testimonial goes here."</strong>
+          <p>Swap this with a real quote after the first client wins. Keep it short, specific, and outcome-driven.</p>
+        </article>
+      </section>
+
+      <section class="container" id="showcase">
+        <div class="section-head">
+          <span class="section-label">See What We Built</span>
+          <h2>Before a client ever signs, we build the mockup first.</h2>
+          <p class="demo-section-note">We build your free mockup before you ever pay a dollar.</p>
+        </div>
+        <div class="demo-grid grid-3">
+          <article class="card demo-card">
+            <img src="https://placehold.co/1200x750/png?text=Local+Roofing+Mockup" alt="Placeholder mockup for a local roofing business" loading="lazy" decoding="async" />
+            <div class="demo-copy">
+              <h3>Roofing company homepage</h3>
+              <p>Clear service stack, stronger trust signals, and a tighter mobile CTA.</p>
+            </div>
+          </article>
+          <article class="card demo-card">
+            <img src="https://placehold.co/1200x750/png?text=Plumber+Mockup" alt="Placeholder mockup for a local plumbing business" loading="lazy" decoding="async" />
+            <div class="demo-copy">
+              <h3>Plumber service page</h3>
+              <p>Fast quote entry, visible emergency contact, and local proof above the fold.</p>
+            </div>
+          </article>
+          <article class="card demo-card">
+            <img src="https://placehold.co/1200x750/png?text=Auto+Detailing+Mockup" alt="Placeholder mockup for a local auto detailing business" loading="lazy" decoding="async" />
+            <div class="demo-copy">
+              <h3>Auto detailing landing page</h3>
+              <p>Before-and-after clarity for offers, pricing, and booking flow.</p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="container" id="services">
@@ -801,25 +977,27 @@
       <section class="container" id="pricing">
         <div class="section-head">
           <span class="section-label">Plans</span>
-          <h2>Flexible options. One setup deep clean.</h2>
-          <p>Everything is structured so you can understand the difference between our services at a glance.</p>
+          <h2>Clear pricing that pushes toward a call.</h2>
+          <p>Everything is structured so local businesses can quickly see what they get and why each tier fits their stage.</p>
         </div>
         <div class="pricing-grid">
           <article class="card">
             <span class="plan-tag">Starter</span>
-            <p style="margin-top:2.2rem;">For businesses that need core online visibility fixed and maintained.</p>
+            <div class="plan-price">$1,500/mo</div>
+            <p class="price-intro">For businesses that need the basics handled, Starter includes monthly listing cleanup, core website checks, and up to 10 review responses.</p>
             <ul>
               <li><span>•</span><span>Google Business + Yelp updated monthly</span></li>
               <li><span>•</span><span>Core website info checks (services, contact, conversion flow)</span></li>
               <li><span>•</span><span>Respond to up to 10 reviews / month</span></li>
             </ul>
             <div style="margin-top: 1.6rem;">
-              <a href="#contact" class="ghost-btn" style="width: 100%;">Contact us</a>
+              <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn" style="width: 100%;">Book Your Free 15-Min Audit</a>
             </div>
           </article>
           <article class="card plan-featured">
             <span class="plan-tag">Growth</span>
-            <p style="margin-top:2.2rem;">For businesses that want stronger brand clarity and more qualified leads.</p>
+            <div class="plan-price">$3,000/mo</div>
+            <p class="price-intro">For growing local teams that want stronger visibility and more leads, Growth includes everything in Starter plus website updates, weekly platform updates, and up to 15 review responses.</p>
             <ul>
               <li><span>•</span><span>Everything in Starter</span></li>
               <li><span>•</span><span>Website updates for service changes, offers, and campaigns</span></li>
@@ -828,12 +1006,13 @@
               <li><span>•</span><span>Monthly report: traffic, clicks, reviews</span></li>
             </ul>
             <div style="margin-top: 1.6rem;">
-              <a href="#contact" class="primary-btn" style="width: 100%;">Contact us</a>
+              <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn" style="width: 100%;">Book Your Free 15-Min Audit</a>
             </div>
           </article>
           <article class="card">
             <span class="plan-tag">Premium</span>
-            <p style="margin-top:2.2rem;">For teams that want a full done-for-you visibility partner.</p>
+            <div class="plan-price">$5,000/mo</div>
+            <p class="price-intro">For teams that want a full visibility partner, Premium includes everything in Starter and Growth plus quarterly asset refresh, boosted ad setup, priority updates, and expanded reporting.</p>
             <ul>
               <li><span>•</span><span>Everything in Starter and Growth</span></li>
               <li><span>•</span><span>Quarterly brand asset refresh (photo/video planning support)</span></li>
@@ -843,13 +1022,13 @@
               <li><span>•</span><span>Expanded reporting with SEO basics</span></li>
             </ul>
             <div style="margin-top: 1.6rem;">
-              <a href="#contact" class="ghost-btn" style="width: 100%;">Contact us</a>
+              <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn" style="width: 100%;">Book Your Free 15-Min Audit</a>
             </div>
           </article>
         </div>
         
         <div style="border-radius: var(--radius-card); overflow: hidden; margin-bottom: 1rem; box-shadow: var(--shadow-soft); height: 250px; max-height: 250px; margin-top: 3rem;">
-           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Business dashboard with charts showing company performance" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+           <img src="https://placehold.co/1400x700/png?text=Abstract+UI+Mockup" alt="Abstract UI mockup representing a business dashboard" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
         </div>
 <div class="setup-box">
           <h3>The deep clean before upkeep.</h3>
@@ -927,7 +1106,7 @@
                   <option>Need a reliable ongoing visibility partner</option>
                 </select>
               </div>
-              <button type="submit" class="primary-btn" id="audit-btn">Request my audit</button>
+              <button type="submit" class="primary-btn" id="audit-btn">Book Your Free 15-Min Audit</button>
             </form>
           </article>
 
@@ -943,7 +1122,7 @@
                 <label for="note">Optional note</label>
                 <textarea id="note" name="note" placeholder="We have 4 locations and customers keep seeing inconsistent info online."></textarea>
               </div>
-              <button type="submit" class="ghost-btn" id="interest-btn">Join waitlist</button>
+              <button type="submit" class="ghost-btn" id="interest-btn">Book Your Free 15-Min Audit</button>
             </form>
           </article>
         </div>
@@ -952,15 +1131,15 @@
 
     <footer>
       <div class="container footer-inner">
-        <p>© 2026 Visible Co. Visibility, websites, and presence management for growing businesses.</p>
-        <p><a href="#contact" style="text-decoration: underline;">Book a free audit</a></p>
+        <p>© 2026 Madevisibly. Visibility, websites, and presence management for growing businesses.</p>
+        <p><a href="https://calendly.com/madevisibly/free-15-min-audit" style="text-decoration: underline;">Book Your Free 15-Min Audit</a></p>
       </div>
     </footer>
 
     <div class="sticky-cta" aria-hidden="false">
       <div class="sticky-cta-inner">
         <span>Free 15-minute visibility audit for business owners</span>
-        <a href="#contact" class="primary-btn">Book now</a>
+        <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn">Book Your Free 15-Min Audit</a>
       </div>
     </div>
   </div>
@@ -1080,56 +1259,17 @@
       });
     })();
 
-    // Notion Form Submit Handlers
-    async function handleFormSubmit(event, formType) {
+    const CALENDLY_URL = 'https://calendly.com/madevisibly/free-15-min-audit';
+    function handleFormSubmit(event) {
       event.preventDefault();
-      const form = event.target;
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.innerText;
-
-      btn.innerText = "Sending...";
-      btn.disabled = true;
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-      data.type = formType; // tell backend if it's 'audit' or 'interest'
-
-      try {
-        const response = await fetch('/api/notion-submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          form.innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--color-success); font-weight: 600;">Success! We received your information.</div>';
-        } else {
-          const body = await response.json().catch(() => ({}));
-          btn.innerText = originalText;
-          btn.disabled = false;
-          const errEl = form.querySelector('.form-error') || document.createElement('p');
-          errEl.className = 'form-error';
-          errEl.style.cssText = 'color:var(--color-danger);font-size:var(--text-sm);margin-top:0.5rem;';
-          errEl.textContent = body.error || 'Something went wrong. Try again.';
-          if (!form.querySelector('.form-error')) form.appendChild(errEl);
-        }
-      } catch (err) {
-        console.error(err);
-        btn.innerText = originalText;
-        btn.disabled = false;
-        const errEl = form.querySelector('.form-error') || document.createElement('p');
-        errEl.className = 'form-error';
-        errEl.style.cssText = 'color:var(--color-danger);font-size:var(--text-sm);margin-top:0.5rem;';
-        errEl.textContent = 'Network error — check your connection and try again.';
-        if (!form.querySelector('.form-error')) form.appendChild(errEl);
-      }
+      window.location.href = CALENDLY_URL;
     }
 
     const auditForm = document.getElementById('audit-form');
-    if (auditForm) auditForm.addEventListener('submit', (e) => handleFormSubmit(e, 'audit'));
+    if (auditForm) auditForm.addEventListener('submit', handleFormSubmit);
     
     const interestForm = document.getElementById('interest-form');
-    if (interestForm) interestForm.addEventListener('submit', (e) => handleFormSubmit(e, 'interest'));
+    if (interestForm) interestForm.addEventListener('submit', handleFormSubmit);
 
   </script>
 </body>
