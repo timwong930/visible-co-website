@@ -753,8 +753,10 @@
         font-size: 0.76rem;
       }
       .hero-inner { gap: 1.6rem; }
-      .sticky-cta { display: none; }
-      main { padding-bottom: 3rem; }
+      .sticky-cta {
+        bottom: max(0.95rem, env(safe-area-inset-bottom));
+      }
+      main { padding-bottom: 8rem; }
     }
 
     @media (max-width: 520px) {
