@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Plumbing website mockup">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="100%" stop-color="#112949"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7cc9ff"/>
+      <stop offset="100%" stop-color="#d0efff"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg2)"/>
+  <circle cx="140" cy="140" r="180" fill="#7cc9ff" opacity="0.13"/>
+  <circle cx="1040" cy="640" r="220" fill="#8fcfff" opacity="0.08"/>
+  <rect x="98" y="78" width="1004" height="594" rx="34" fill="#0a1220" filter="url(#shadow2)"/>
+  <rect x="98" y="78" width="1004" height="54" rx="34" fill="#101b31"/>
+  <circle cx="138" cy="105" r="8" fill="#ff5f57"/>
+  <circle cx="162" cy="105" r="8" fill="#febc2e"/>
+  <circle cx="186" cy="105" r="8" fill="#28c840"/>
+  <rect x="856" y="95" width="182" height="24" rx="12" fill="#182644"/>
+  <rect x="128" y="178" width="340" height="18" rx="9" fill="#27436d"/>
+  <rect x="128" y="214" width="260" height="16" rx="8" fill="#a8d9ff" opacity="0.75"/>
+  <rect x="128" y="258" width="210" height="54" rx="27" fill="url(#accent2)"/>
+  <rect x="350" y="258" width="198" height="54" rx="27" fill="#17233f" stroke="#33527c"/>
+  <text x="233" y="292" font-family="Arial, sans-serif" font-size="18" fill="#09111b" font-weight="700" text-anchor="middle">Get a plumbing quote</text>
+  <text x="449" y="292" font-family="Arial, sans-serif" font-size="18" fill="#e0efff" font-weight="700" text-anchor="middle">Emergency service</text>
+  <rect x="128" y="360" width="300" height="194" rx="24" fill="#121d34" stroke="#263b60"/>
+  <rect x="450" y="360" width="300" height="194" rx="24" fill="#121d34" stroke="#263b60"/>
+  <rect x="772" y="360" width="260" height="194" rx="24" fill="#121d34" stroke="#263b60"/>
+  <circle cx="178" cy="406" r="22" fill="#1f3359"/>
+  <path d="M169 406h18M178 397v18" stroke="#9fd7ff" stroke-width="4" stroke-linecap="round"/>
+  <rect x="218" y="394" width="140" height="12" rx="6" fill="#8fb4e8"/>
+  <rect x="218" y="420" width="178" height="12" rx="6" fill="#dcecff" opacity="0.86"/>
+  <rect x="218" y="446" width="118" height="12" rx="6" fill="#8ca4cc" opacity="0.72"/>
+  <rect x="218" y="492" width="104" height="38" rx="19" fill="#1d2f54"/>
+  <text x="270" y="517" font-family="Arial, sans-serif" font-size="14" fill="#dcecff" font-weight="700" text-anchor="middle">Call now</text>
+  <circle cx="500" cy="406" r="22" fill="#1f3359"/>
+  <path d="M491 406h18M500 397v18" stroke="#9fd7ff" stroke-width="4" stroke-linecap="round"/>
+  <rect x="540" y="394" width="140" height="12" rx="6" fill="#8fb4e8"/>
+  <rect x="540" y="420" width="182" height="12" rx="6" fill="#dcecff" opacity="0.86"/>
+  <rect x="540" y="446" width="116" height="12" rx="6" fill="#8ca4cc" opacity="0.72"/>
+  <rect x="540" y="492" width="104" height="38" rx="19" fill="#1d2f54"/>
+  <text x="592" y="517" font-family="Arial, sans-serif" font-size="14" fill="#dcecff" font-weight="700" text-anchor="middle">Request</text>
+  <circle cx="808" cy="406" r="22" fill="#1f3359"/>
+  <path d="M799 406h18M808 397v18" stroke="#9fd7ff" stroke-width="4" stroke-linecap="round"/>
+  <rect x="848" y="394" width="116" height="12" rx="6" fill="#8fb4e8"/>
+  <rect x="848" y="420" width="156" height="12" rx="6" fill="#dcecff" opacity="0.86"/>
+  <rect x="848" y="446" width="106" height="12" rx="6" fill="#8ca4cc" opacity="0.72"/>
+  <rect x="848" y="492" width="104" height="38" rx="19" fill="#1d2f54"/>
+  <text x="900" y="517" font-family="Arial, sans-serif" font-size="14" fill="#dcecff" font-weight="700" text-anchor="middle">Schedule</text>
+  <text x="128" y="612" font-family="Arial, sans-serif" font-size="15" fill="#8fb4e8" letter-spacing="2">PLUMBING WEBSITE MOCKUP</text>
+</svg>

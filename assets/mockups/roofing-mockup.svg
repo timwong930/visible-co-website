@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Roofing website mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c1324"/>
+      <stop offset="100%" stop-color="#16284a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ea8ff"/>
+      <stop offset="100%" stop-color="#a9d2ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="160" fill="#5e8cff" opacity="0.14"/>
+  <circle cx="220" cy="620" r="240" fill="#8fb7ff" opacity="0.08"/>
+  <rect x="96" y="84" width="1008" height="582" rx="34" fill="#0a1020" filter="url(#shadow)"/>
+  <rect x="96" y="84" width="1008" height="54" rx="34" fill="#10192f"/>
+  <circle cx="136" cy="111" r="8" fill="#ff5f57"/>
+  <circle cx="160" cy="111" r="8" fill="#febc2e"/>
+  <circle cx="184" cy="111" r="8" fill="#28c840"/>
+  <rect x="842" y="101" width="188" height="22" rx="11" fill="#1a2644"/>
+  <rect x="126" y="182" width="420" height="20" rx="10" fill="#22365f"/>
+  <rect x="126" y="220" width="330" height="16" rx="8" fill="#5d7db8" opacity="0.85"/>
+  <rect x="126" y="256" width="178" height="46" rx="23" fill="url(#accent)"/>
+  <rect x="314" y="256" width="176" height="46" rx="23" fill="#17233f" stroke="#29416d"/>
+  <text x="215" y="285" font-family="Arial, sans-serif" font-size="18" fill="#08111f" font-weight="700" text-anchor="middle">Book a free audit</text>
+  <text x="402" y="285" font-family="Arial, sans-serif" font-size="18" fill="#d9e7ff" font-weight="700" text-anchor="middle">View services</text>
+  <rect x="126" y="360" width="250" height="190" rx="24" fill="#121b33" stroke="#24385f"/>
+  <rect x="404" y="360" width="250" height="190" rx="24" fill="#121b33" stroke="#24385f"/>
+  <rect x="682" y="360" width="250" height="190" rx="24" fill="#121b33" stroke="#24385f"/>
+  <rect x="156" y="392" width="90" height="12" rx="6" fill="#7eabff"/>
+  <rect x="156" y="420" width="180" height="12" rx="6" fill="#d8e4ff" opacity="0.86"/>
+  <rect x="156" y="448" width="120" height="12" rx="6" fill="#8da7d9" opacity="0.65"/>
+  <rect x="156" y="494" width="96" height="38" rx="19" fill="#1c2e55"/>
+  <text x="204" y="519" font-family="Arial, sans-serif" font-size="14" fill="#d8e4ff" font-weight="700" text-anchor="middle">Call now</text>
+  <rect x="434" y="392" width="90" height="12" rx="6" fill="#7eabff"/>
+  <rect x="434" y="420" width="180" height="12" rx="6" fill="#d8e4ff" opacity="0.86"/>
+  <rect x="434" y="448" width="140" height="12" rx="6" fill="#8da7d9" opacity="0.65"/>
+  <rect x="434" y="494" width="96" height="38" rx="19" fill="#1c2e55"/>
+  <text x="482" y="519" font-family="Arial, sans-serif" font-size="14" fill="#d8e4ff" font-weight="700" text-anchor="middle">Quote</text>
+  <rect x="712" y="392" width="90" height="12" rx="6" fill="#7eabff"/>
+  <rect x="712" y="420" width="180" height="12" rx="6" fill="#d8e4ff" opacity="0.86"/>
+  <rect x="712" y="448" width="132" height="12" rx="6" fill="#8da7d9" opacity="0.65"/>
+  <rect x="712" y="494" width="96" height="38" rx="19" fill="#1c2e55"/>
+  <text x="760" y="519" font-family="Arial, sans-serif" font-size="14" fill="#d8e4ff" font-weight="700" text-anchor="middle">Review</text>
+  <text x="126" y="610" font-family="Arial, sans-serif" font-size="15" fill="#8fa6d9" letter-spacing="2">ROOFING WEBSITE MOCKUP</text>
+</svg>
