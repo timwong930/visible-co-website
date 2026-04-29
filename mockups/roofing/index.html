@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Peak Roofing</title>
+  <style>
+    :root {
+      --bg: #fff8f1;
+      --panel: rgba(255,255,255,0.9);
+      --panel-strong: #ffffff;
+      --text: #172033;
+      --muted: #6d7381;
+      --accent: #e86c3a;
+      --accent-2: #ffb86d;
+      --line: #efd5be;
+      --shadow: 0 24px 60px rgba(33, 29, 25, 0.18);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255, 198, 139, 0.9) 0, rgba(255, 198, 139, 0.16) 24%, transparent 25%),
+        radial-gradient(circle at 88% 8%, rgba(255,255,255,0.82) 0, rgba(255,255,255,0.12) 16%, transparent 17%),
+        linear-gradient(180deg, #ffdcb7 0%, #ff9d63 54%, #23344b 100%);
+    }
+    .page {
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .frame {
+      height: calc(100vh - 32px);
+      min-height: 720px;
+      max-height: 780px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.48);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 22px;
+      background: rgba(255, 244, 232, 0.9);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px;
+      background: linear-gradient(145deg, #e86c3a, #ffb86d);
+      display: grid; place-items: center;
+      color: white; font-weight: 900;
+      box-shadow: 0 10px 20px rgba(232,108,58,0.24);
+    }
+    .brand strong { display: block; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .brand span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .nav { display: flex; gap: 16px; color: #405065; font-size: 13px; }
+    .nav span { opacity: 0.85; }
+    .cta {
+      padding: 10px 16px; border-radius: 999px;
+      background: var(--accent); color: white; font-weight: 700; font-size: 13px;
+      box-shadow: 0 10px 24px rgba(232,108,58,0.26);
+    }
+    .hero {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-copy, .hero-visual, .card, .stats, .footer-note {
+      background: var(--panel);
+      border: 1px solid rgba(239, 213, 190, 0.9);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+    }
+    .hero-copy { padding: 28px; display: grid; align-content: start; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      width: fit-content;
+      padding: 7px 12px; border-radius: 999px;
+      background: rgba(232,108,58,0.11); color: #b55128;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    h1 { margin: 16px 0 12px; font-size: clamp(28px, 4vw, 46px); line-height: 0.96; letter-spacing: -0.04em; max-width: 12ch; }
+    .lead { margin: 0; color: var(--muted); line-height: 1.55; max-width: 34ch; font-size: 15px; }
+    .buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      border-radius: 999px; padding: 11px 16px; font-size: 13px; font-weight: 800; text-decoration: none;
+    }
+    .btn.primary { background: var(--accent); color: white; }
+    .btn.secondary { background: rgba(255,255,255,0.88); color: #b45128; border: 1px solid var(--line); }
+    .trust-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .trust-row span {
+      padding: 8px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line);
+      font-size: 12px; color: #5d6371; font-weight: 600;
+    }
+    .hero-visual { padding: 18px; display: grid; gap: 14px; }
+    .roof-card {
+      flex: 1;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(34,44,63,0.96), rgba(20,29,45,0.98)),
+        linear-gradient(180deg, #22304a, #151e2d);
+      color: white;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+      min-height: 212px;
+    }
+    .roof-card::before {
+      content: "";
+      position: absolute; inset: auto -10% -18% -10%; height: 54%;
+      background: linear-gradient(135deg, transparent 26%, rgba(255,184,109,0.36) 26% 34%, transparent 34% 44%, rgba(232,108,58,0.42) 44% 52%, transparent 52% 62%, rgba(255,184,109,0.4) 62% 70%, transparent 70%);
+      transform: skewY(-8deg);
+    }
+    .roof-card h3 { margin: 0; font-size: 17px; }
+    .roof-card p { margin: 6px 0 14px; color: #c8d8ef; font-size: 13px; }
+    .roof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; position: relative; z-index: 1; }
+    .roof-grid div {
+      border-radius: 16px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12); padding: 10px; min-height: 88px;
+    }
+    .roof-grid strong { display: block; font-size: 14px; margin-bottom: 5px; }
+    .roof-grid span { color: #b7c8e2; font-size: 11px; line-height: 1.35; }
+    .roof-roof {
+      position: absolute; right: -8px; bottom: 12px; width: 55%; height: 58%;
+      background: linear-gradient(145deg, #f0a05b, #c7502d);
+      clip-path: polygon(6% 48%, 44% 8%, 90% 43%, 90% 56%, 44% 19%, 6% 56%);
+      opacity: 0.95;
+      filter: drop-shadow(0 16px 24px rgba(0,0,0,0.24));
+    }
+    .roof-roof::after {
+      content: ""; position: absolute; inset: auto 18% 2% 20%; height: 36%;
+      background: linear-gradient(180deg, #ffd5a4, #a43f22);
+      clip-path: polygon(18% 24%, 60% 0, 100% 20%, 100% 100%, 0 100%, 0 25%);
+    }
+    .stats {
+      margin: 0 22px 18px;
+      padding: 16px 18px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .stat { padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.72); border: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 22px; letter-spacing: -0.03em; }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .services {
+      padding: 0 22px 18px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .card { padding: 14px; min-height: 128px; }
+    .card h4 { margin: 0 0 6px; font-size: 15px; }
+    .card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .footer-note {
+      margin: 0 22px 22px;
+      padding: 14px 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.8);
+    }
+    .footer-note strong { font-size: 13px; }
+    .footer-note span { color: var(--muted); font-size: 12px; }
+    .footer-note a { color: var(--accent); font-weight: 800; font-size: 12px; text-decoration: none; white-space: nowrap; }
+    @media (max-width: 900px) {
+      .frame { height: auto; min-height: 0; }
+      .hero, .services, .stats { grid-template-columns: 1fr; }
+      .nav { display: none; }
+      h1 { max-width: 11ch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">N</div>
+          <div>
+            <strong>North Peak Roofing</strong>
+            <span>Repairs • replacements • inspections</span>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Top navigation">
+          <span>Services</span><span>Projects</span><span>Reviews</span><span>Contact</span>
+        </nav>
+        <a class="cta" href="#">Get roof quote</a>
+      </header>
+
+      <section class="hero">
+        <article class="hero-copy">
+          <span class="eyebrow">Storm response ready</span>
+          <h1>Fast roof repairs for homes that need help now.</h1>
+          <p class="lead">Clear inspection steps, honest project photos, and same-day response when weather damage hits hard.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#">Book inspection</a>
+            <a class="btn secondary" href="#">See projects</a>
+          </div>
+          <div class="trust-row">
+            <span>Licensed & insured</span>
+            <span>Leak tracking</span>
+            <span>Financing available</span>
+          </div>
+        </article>
+        <aside class="hero-visual">
+          <div class="roof-card">
+            <h3>Storm-ready team</h3>
+            <p>Inspection photos • leak notes • dispatch queue</p>
+            <div class="roof-grid">
+              <div><strong>24/7</strong><span>emergency calls answered</span></div>
+              <div><strong>48h</strong><span>response for estimates</span></div>
+              <div><strong>120+</strong><span>roofs repaired last season</span></div>
+            </div>
+            <div class="roof-roof" aria-hidden="true"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="stats" aria-label="Highlights">
+        <div class="stat"><strong>4.9★</strong><span>customer rating</span></div>
+        <div class="stat"><strong>Same day</strong><span>inspection slots</span></div>
+        <div class="stat"><strong>Free</strong><span>photo checklist</span></div>
+      </section>
+
+      <section class="services">
+        <article class="card"><h4>Inspection</h4><p>Roof photos, damage notes, and clear next steps.</p></article>
+        <article class="card"><h4>Repairs</h4><p>Leak fixes, shingle replacement, and storm patching.</p></article>
+        <article class="card"><h4>Replacement</h4><p>Full tear-off, warranties, and financing support.</p></article>
+      </section>
+
+      <div class="footer-note">
+        <div>
+          <strong>North Peak Roofing</strong><br />
+          <span>Built to feel like a real local roofing site.</span>
+        </div>
+        <a href="#">Open full demo ↗</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

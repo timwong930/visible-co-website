@@ -397,11 +397,12 @@
       overflow: hidden;
       padding: 0;
     }
-    .demo-card img {
+    .demo-card .mockup-frame {
+      display: block;
       width: 100%;
       aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
+      border: 0;
+      background: #fff;
       border-bottom: 1px solid rgba(146, 177, 255, 0.12);
     }
     .demo-card .demo-copy {
@@ -410,6 +411,14 @@
       gap: 0.35rem;
     }
     .demo-card h3 { margin: 0; }
+    .demo-card .mockup-open {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 0.2rem;
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      font-weight: 700;
+    }
     .preview-gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -951,24 +960,27 @@
         </div>
         <div class="demo-grid grid-3">
           <article class="card demo-card">
-            <img src="assets/mockups/roofing-mockup.svg" alt="Placeholder mockup for a local roofing business" loading="lazy" decoding="async" />
+            <iframe class="mockup-frame" src="mockups/roofing/index.html" title="Roofing business mockup website" loading="lazy"></iframe>
             <div class="demo-copy">
               <h3>Roofing company homepage</h3>
               <p>Clear service stack, stronger trust signals, and a tighter mobile CTA.</p>
+              <a class="mockup-open" href="mockups/roofing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
             </div>
           </article>
           <article class="card demo-card">
-            <img src="assets/mockups/plumbing-mockup.svg" alt="Placeholder mockup for a local plumbing business" loading="lazy" decoding="async" />
+            <iframe class="mockup-frame" src="mockups/plumbing/index.html" title="Plumbing business mockup website" loading="lazy"></iframe>
             <div class="demo-copy">
               <h3>Plumber service page</h3>
               <p>Fast quote entry, visible emergency contact, and local proof above the fold.</p>
+              <a class="mockup-open" href="mockups/plumbing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
             </div>
           </article>
           <article class="card demo-card">
-            <img src="assets/mockups/detailing-mockup.svg" alt="Placeholder mockup for a local auto detailing business" loading="lazy" decoding="async" />
+            <iframe class="mockup-frame" src="mockups/detailing/index.html" title="Auto detailing mockup website" loading="lazy"></iframe>
             <div class="demo-copy">
               <h3>Auto detailing landing page</h3>
               <p>Before-and-after clarity for offers, pricing, and booking flow.</p>
+              <a class="mockup-open" href="mockups/detailing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
             </div>
           </article>
         </div>

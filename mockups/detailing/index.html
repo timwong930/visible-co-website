@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlossLine Auto Studio</title>
+  <style>
+    :root {
+      --bg: #f8f2ff;
+      --panel: rgba(255,255,255,0.92);
+      --text: #14161f;
+      --muted: #5a667d;
+      --accent: #7b62ff;
+      --accent-2: #25d6c9;
+      --line: #e0d4ff;
+      --shadow: 0 24px 60px rgba(37, 24, 71, 0.18);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(255,255,255,0.95) 0, rgba(255,255,255,0.15) 21%, transparent 22%),
+        radial-gradient(circle at 88% 10%, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.08) 15%, transparent 16%),
+        linear-gradient(180deg, #f2eaff 0%, #b58bff 55%, #24d7c7 100%);
+    }
+    .page { min-height: 100vh; padding: 16px; }
+    .frame {
+      height: calc(100vh - 32px);
+      min-height: 720px; max-height: 780px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.5);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 16px 22px; background: rgba(240, 232, 255, 0.94); border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(145deg, #7b62ff, #25d6c9);
+      display: grid; place-items: center; color: white; font-weight: 900; box-shadow: 0 10px 24px rgba(123,98,255,0.24);
+    }
+    .brand strong { display: block; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .brand span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .cta {
+      padding: 10px 16px; border-radius: 999px; background: var(--accent); color: white;
+      font-weight: 800; font-size: 13px; text-decoration: none; box-shadow: 0 10px 24px rgba(123,98,255,0.24);
+    }
+    .hero {
+      padding: 22px;
+      display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 16px;
+      align-items: stretch;
+    }
+    .copy, .visual, .package, .footer-note {
+      background: var(--panel);
+      border: 1px solid rgba(224, 212, 255, 0.95);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+    }
+    .copy { padding: 28px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+      padding: 7px 12px; border-radius: 999px; background: rgba(123,98,255,0.1);
+      color: #6d56e4; font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    h1 { margin: 16px 0 12px; font-size: clamp(28px, 4vw, 46px); line-height: 0.96; letter-spacing: -0.04em; max-width: 12ch; }
+    .lead { margin: 0; color: var(--muted); line-height: 1.55; max-width: 35ch; font-size: 15px; }
+    .buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .btn { border-radius: 999px; padding: 11px 16px; font-size: 13px; font-weight: 800; text-decoration: none; }
+    .btn.primary { background: var(--accent); color: white; }
+    .btn.secondary { background: rgba(255,255,255,0.9); color: #6d56e4; border: 1px solid var(--line); }
+    .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .stats span {
+      padding: 8px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line);
+      color: #667189; font-size: 12px; font-weight: 700;
+    }
+    .visual { padding: 18px; display: grid; gap: 14px; }
+    .hero-visual {
+      position: relative;
+      min-height: 212px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, #111420, #1b2032 56%, #0d1018 100%);
+      color: white;
+      padding: 18px;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: ""; position: absolute; inset: auto 0 12px auto; width: 74%; height: 58%;
+      background:
+        radial-gradient(circle at 28% 45%, rgba(255,255,255,0.84) 0 7%, transparent 8%),
+        radial-gradient(circle at 72% 45%, rgba(255,255,255,0.84) 0 7%, transparent 8%),
+        linear-gradient(180deg, rgba(123,98,255,0.18), rgba(37,214,201,0.02));
+      clip-path: polygon(0 52%, 18% 30%, 36% 24%, 65% 24%, 86% 30%, 100% 52%, 100% 78%, 0 78%);
+      opacity: 0.96;
+    }
+    .hero-visual h3 { margin: 0; font-size: 17px; position: relative; z-index: 1; }
+    .hero-visual p { margin: 6px 0 14px; color: #c7d1f2; font-size: 13px; position: relative; z-index: 1; }
+    .services {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; position: relative; z-index: 1;
+    }
+    .service {
+      border-radius: 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px; min-height: 86px;
+    }
+    .service strong { display: block; font-size: 14px; margin-bottom: 5px; }
+    .service span { color: #b7c4e7; font-size: 11px; line-height: 1.35; }
+    .car {
+      position: absolute; right: 4%; bottom: 10px; width: 50%; height: 42%;
+      background: linear-gradient(180deg, #2d3245, #171b26);
+      clip-path: polygon(8% 58%, 20% 38%, 38% 28%, 68% 28%, 81% 38%, 92% 58%, 100% 58%, 100% 74%, 8% 74%);
+      filter: drop-shadow(0 16px 24px rgba(0,0,0,0.28));
+    }
+    .car::before, .car::after {
+      content: ""; position: absolute; bottom: -18px; width: 34px; height: 34px; border-radius: 50%;
+      background: #0e1118; border: 8px solid #cdbfff;
+    }
+    .car::before { left: 16%; }
+    .car::after { right: 16%; }
+    .package-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      padding: 0 22px 18px;
+    }
+    .package { padding: 14px; min-height: 116px; }
+    .package h4 { margin: 0 0 6px; font-size: 15px; }
+    .package p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .price { margin-top: 8px; font-weight: 900; color: var(--accent); }
+    .footer-note {
+      margin: 0 22px 22px; padding: 14px 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.82);
+    }
+    .footer-note strong { font-size: 13px; }
+    .footer-note span { color: var(--muted); font-size: 12px; }
+    .footer-note a { color: var(--accent); font-weight: 800; font-size: 12px; text-decoration: none; white-space: nowrap; }
+    @media (max-width: 900px) {
+      .frame { height: auto; min-height: 0; }
+      .hero, .package-row, .services { grid-template-columns: 1fr; }
+      .topbar { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">G</div>
+          <div>
+            <strong>GlossLine Auto Studio</strong>
+            <span>Wash • ceramic • detailing packages</span>
+          </div>
+        </div>
+        <a class="cta" href="#">Book detail</a>
+      </header>
+
+      <section class="hero">
+        <article class="copy">
+          <span class="eyebrow">Premium finish</span>
+          <h1>Detailing that feels showroom-level.</h1>
+          <p class="lead">The page leans into before/after clarity, package pricing, and a strong booking path for local drivers.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#">See packages</a>
+            <a class="btn secondary" href="#">Before / after</a>
+          </div>
+          <div class="stats">
+            <span>5-star reviews</span>
+            <span>Ceramic coating</span>
+            <span>Interior reset</span>
+            <span>Fleet pricing</span>
+          </div>
+        </article>
+        <aside class="visual">
+          <div class="hero-visual">
+            <h3>Showroom-level finish</h3>
+            <p>Ceramic • polish • wheels • interior reset</p>
+            <div class="services">
+              <div class="service"><strong>Wash</strong><span>Paint-safe wash and gloss boost</span></div>
+              <div class="service"><strong>Ceramic</strong><span>Longer protection with premium shine</span></div>
+            </div>
+            <div class="car" aria-hidden="true"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="package-row">
+        <article class="package"><h4>Wash</h4><p>Quick refresh for maintenance cleanups.</p><div class="price">$149</div></article>
+        <article class="package"><h4>Ceramic</h4><p>Protected shine with durable slick finish.</p><div class="price">$349</div></article>
+        <article class="package"><h4>Interior</h4><p>Seats, trim, and reset detail package.</p><div class="price">$199</div></article>
+        <article class="package"><h4>Fleet</h4><p>Recurring work for work vans and teams.</p><div class="price">Custom</div></article>
+      </section>
+
+      <div class="footer-note">
+        <div>
+          <strong>GlossLine Auto Studio</strong><br />
+          <span>Built to feel like a premium car-care website.</span>
+        </div>
+        <a href="#">Open full demo ↗</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
