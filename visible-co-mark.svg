@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Visible Co mark">
+  <defs>
+    <linearGradient id="barBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2374ff"/>
+      <stop offset="100%" stop-color="#1c45e0"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" fill="#f4f5f7"/>
+  <path d="M42 56h56l62 108 63-48-82 103z" fill="#112552"/>
+  <path d="M145 111l27-10v66l-27 6z" fill="url(#barBlue)"/>
+  <path d="M177 98l27-10v83l-27 7z" fill="url(#barBlue)"/>
+  <path d="M209 81l29-10v102l-29 8z" fill="url(#barBlue)"/>
+  <path d="M112 167c29-31 72-51 122-59-38 14-73 36-101 67h-21z" fill="#173f98"/>
+</svg>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visible Co — Business Visibility & Online Presence</title>
+  <meta name="description" content="Mobile-first landing page for Visible Co, helping businesses improve discoverability, website clarity, and online presence management." />
+  <meta name="theme-color" content="#0a0503" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
+      --text-base: clamp(1rem, 0.96rem + 0.22vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.45rem);
+      --text-xl: clamp(1.7rem, 1.25rem + 1.8vw, 2.7rem);
+      --text-2xl: clamp(2.4rem, 1.6rem + 3.2vw, 4.2rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f4f5f7;
+      --color-surface: rgba(255, 255, 255, 0.94);
+      --color-surface-soft: rgba(248, 250, 255, 0.9);
+      --color-surface-pill: rgba(242, 246, 255, 0.9);
+      --color-border: rgba(14, 34, 78, 0.12);
+      --color-border-soft: rgba(14, 34, 78, 0.06);
+      --color-divider: rgba(14, 34, 78, 0.1);
+      --color-text: #0d1f4a;
+      --color-text-muted: #223860;
+      --color-text-faint: #4b5a78;
+      --color-primary: #2e66ca;
+      --color-primary-soft: rgba(46, 102, 202, 0.14);
+      --color-primary-strong: #173e8f;
+      --color-accent: #3a78dd;
+      --color-danger: #ff6767;
+      --color-success: #7ed4aa;
+      --shadow-soft: 0 26px 80px rgba(13, 31, 74, 0.08);
+      --shadow-pill: 0 16px 38px rgba(13, 31, 74, 0.14);
+      --radius-pill: 999px;
+      --radius-lg: 1.6rem;
+      --radius-card: 1.8rem;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --content-max: 1160px;
+    }
+
+    [data-theme="dark"] {
+      /* Already dark by default, keep same tokens so toggle just inverts overlays if needed later */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; width: 100%; margin: 0; }
+    html { scroll-behavior: smooth; text-size-adjust: none; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text); font-weight: 500;
+      background: radial-gradient(circle at 10% 0%, #eceff6 0, transparent 40%),
+                  radial-gradient(circle at 90% 10%, #e4e9f4 0, transparent 45%),
+                  var(--color-bg);
+      }
+    a { color: inherit; text-decoration: none; }
+    img, canvas, svg { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    button { cursor: pointer; border: none; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; background: #fff; color: #000;
+      padding: 0.75rem 1rem; border-radius: 999px; z-index: 120; border: 1px solid var(--color-border);
+    }
+    .skip-link:focus-visible { top: 1rem; }
+
+    .page-shell { position: relative; isolation: isolate; }
+
+    #three-container {
+      position: fixed; inset: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none;
+      opacity: 0.42;
+    }
+    .bg-gradient {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        /* Soft reading veil — strong centre, fades to transparent at edges */
+        radial-gradient(ellipse 80% 70% at 50% 38%, rgba(243, 245, 249, 0.9) 0%, rgba(243, 245, 249, 0.62) 45%, transparent 72%),
+        radial-gradient(circle at 20% 15%, rgba(78, 120, 205, 0.08), transparent 40%),
+        radial-gradient(circle at 75% 10%, rgba(60, 103, 185, 0.08), transparent 46%),
+        radial-gradient(circle at 20% 85%, rgba(32, 68, 145, 0.1), transparent 52%),
+        radial-gradient(circle at 85% 80%, rgba(95, 135, 205, 0.12), rgba(243, 245, 249, 0.2) 75%);
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--content-max));
+      margin: 0 auto;
+    }
+
+    header.nav {
+      position: sticky; top: 0; z-index: 30;
+      backdrop-filter: blur(24px) saturate(180%);
+      background: rgba(255, 255, 255, 0.65);
+      border-bottom: 1px solid rgba(14, 34, 78, 0.1);
+      box-shadow: 0 4px 30px rgba(13, 31, 74, 0.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 0.9rem;
+    }
+    .brand-mark {
+      width: 2.9rem; height: 2.9rem;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(13,31,74,0.15);
+      background: #fff;
+      border: 1px solid rgba(14, 34, 78, 0.08);
+      flex: 0 0 auto;
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; padding: 0.15rem; background: #fff; }
+    .brand-text strong { font-weight: 800; font-size: var(--text-sm); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+    .brand-text span { display: block; font-size: var(--text-xs); color: var(--color-text-muted); font-weight: 500; }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
+    .pill-btn, .primary-btn, .ghost-btn {
+      min-height: 44px;
+      border-radius: var(--radius-pill);
+      padding: 0.68rem 1.3rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: var(--text-sm);
+      gap: 0.4rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+    }
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-weight: 500;
+    }
+    .primary-btn {
+      background: radial-gradient(circle at 30% 0, var(--color-primary-strong), var(--color-primary));
+      color: #ffffff;
+      border: 1px solid rgba(163, 201, 255, 0.78);
+      box-shadow: var(--shadow-pill);
+      font-weight: 700;
+    }
+    .ghost-btn {
+      background: rgba(242, 246, 255, 0.85);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-weight: 500;
+    }
+    .primary-btn:hover, .primary-btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 64px rgba(31, 110, 240, 0.34);
+      background: radial-gradient(circle at 20% 0, #95beff, var(--color-primary-strong));
+    }
+    .ghost-btn:hover, .ghost-btn:focus-visible, .pill-btn:hover, .pill-btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(13,31,74,0.1);
+    }
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    main { padding-bottom: 5rem; }
+
+    .hero {
+      padding: clamp(3.2rem, 6vh, 4rem) 0 clamp(2.2rem, 3vh, 3rem);
+      display: grid;
+      grid-template-columns: minmax(0, 100%);
+      justify-content: center;
+    }
+    .hero-inner {
+      display: grid;
+      gap: 1.8rem;
+      justify-items: flex-start;
+    }
+    .hero-tagline {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(80, 140, 255, 0.4);
+      background: radial-gradient(circle at 0 50%, rgba(80, 140, 255, 0.2), rgba(255, 255, 255, 0.95));
+      color: var(--color-text-muted); font-weight: 500;
+      font-size: var(--text-xs);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .hero-tagline span:first-child { font-size: 1.1rem; }
+    .hero-heading {
+      max-width: 100%;
+    }
+    .hero-heading h1 {
+      max-width: 18ch;
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      text-shadow: 0 0 28px rgba(243,245,249,1), 0 0 56px rgba(243,245,249,0.9);
+    }
+    .hero-heading p {
+      margin-top: 0.9rem;
+      color: var(--color-text-muted); font-weight: 500;
+      max-width: 36ch;
+      text-shadow: 0 0 18px rgba(243,245,249,1), 0 0 36px rgba(243,245,249,0.85);
+      text-wrap: pretty;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .hero-quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+    .hero-quick span {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--color-border-soft);
+    }
+
+    .hero-strip {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+    .hero-strip-row {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      font-size: var(--text-sm);
+    }
+    .hero-strip-row strong { color: var(--color-primary-strong); font-family: var(--font-display); }
+    .hero-strip-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .hero-strip-pills span {
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(238, 244, 255, 0.92);
+      border: 1px solid var(--color-border-soft);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted); font-weight: 500;
+    }
+
+    .hero-visual {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      height: clamp(220px, 38vw, 340px);
+      max-height: 340px;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-right-col {
+      display: grid;
+      gap: 1rem;
+    }
+    .hero-metrics {
+      margin-top: 1.5rem;
+    }
+    .metric-card, .flow-card {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-soft);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .metric-card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.9rem;
+      font-size: var(--text-sm);
+    }
+    .metric {
+      padding: 0.7rem 0.8rem;
+      border-radius: 1rem;
+      background: rgba(238, 244, 255, 0.92);
+      border: 1px solid var(--color-border-soft);
+    }
+    .metric strong { display: block; font-family: var(--font-display); font-size: 1.35rem; }
+    .metric span { color: var(--color-text-muted); font-weight: 500; }
+
+    .flow-card h2 {
+      font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.4rem;
+    }
+    .flow-steps { display: flex; flex-wrap: wrap; gap: 0.6rem; font-size: var(--text-xs); }
+    .flow-steps span {
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(238, 244, 255, 0.92);
+      border: 1px solid var(--color-border-soft);
+    }
+
+    section {
+      padding: 1.8rem 0 1.3rem;
+    }
+    .section-head {
+      margin-bottom: 1.1rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .section-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted); font-weight: 500;
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.2rem + 1.3vw, 2.3rem);
+      letter-spacing: -0.02em;
+    }
+    .section-head p { color: var(--color-text-muted); font-weight: 500; max-width: 50ch; }
+
+    .grid-3, .grid-2, .pricing-grid, .faq-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card, .metric-card, .flow-card, .lead-card, .setup-box {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .card:hover, .metric-card:hover, .flow-card:hover, .lead-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(13, 31, 74, 0.16);
+      border-color: rgba(80, 140, 255, 0.42);
+    }
+
+    .card {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .card p { color: var(--color-text-muted); font-weight: 500; }
+    .card ul { list-style: none; margin-top: 0.7rem; display: grid; gap: 0.5rem; font-size: var(--text-sm); }
+    .card li { display: flex; gap: 0.5rem; }
+    .card li span:first-child { color: var(--color-primary-strong); }
+
+    .pricing-grid .card {
+      position: relative;
+      padding-top: 1.3rem;
+    }
+    .plan-tag {
+      position: absolute; top: 0.9rem; right: 1.05rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(238, 244, 255, 0.94);
+      border: 1px solid var(--color-border-soft);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted); font-weight: 500;
+    }
+    .plan-price { margin-top: 0.2rem; margin-bottom: 0.5rem; }
+    .plan-price strong {
+      font-family: var(--font-display);
+      font-size: 2rem;
+    }
+    .plan-price span { color: var(--color-text-faint); }
+    .plan-featured {
+      border-color: rgba(80, 140, 255, 0.68);
+      background: radial-gradient(circle at 0 0, rgba(80, 140, 255, 0.24), rgba(255, 255, 255, 0.98));
+    }
+
+    .setup-box {
+      margin-top: 1.1rem;
+      border-radius: var(--radius-card);
+      border: 1px dashed rgba(80, 140, 255, 0.7);
+      background: rgba(255, 255, 255, 0.96);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .setup-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .setup-box p { color: var(--color-text-muted); font-weight: 500; font-size: var(--text-sm); }
+
+    .faq-grid .card {
+      padding: 0.9rem 1.05rem;
+    }
+    .faq details { width: 100%; }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq details p {
+      margin-top: 0.6rem;
+      color: var(--color-text-muted); font-weight: 500;
+      font-size: var(--text-sm);
+    }
+
+    .split-2 {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .lead-card {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.96);
+      padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .lead-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+    form { display: grid; gap: 0.8rem; margin-top: 0.5rem; }
+    label { font-size: var(--text-sm); font-weight: 600; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 46px;
+      border-radius: 0.95rem;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-pill);
+      padding: 0.7rem 0.9rem;
+      color: var(--color-text); font-weight: 500;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+
+    footer {
+      padding: 2.4rem 0 5.4rem;
+      color: var(--color-text-faint);
+      border-top: 1px solid var(--color-divider);
+      margin-top: 1rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: var(--text-sm);
+    }
+
+    .sticky-cta {
+      position: fixed;
+      inset-inline: 0;
+      bottom: max(0.7rem, env(safe-area-inset-bottom));
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 40;
+    }
+    .sticky-cta-inner {
+      pointer-events: auto;
+      width: min(420px, 100% - 1.2rem);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(163, 201, 255, 0.4);
+      background: #0f3fbd;
+      box-shadow: 0 20px 60px rgba(13,31,74,0.34);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 0.55rem 0.55rem 0.9rem;
+      font-size: var(--text-sm);
+    }
+    .sticky-cta-inner span {
+      flex: 1;
+      color: #fdfaf6; font-weight: 500;
+    }
+    .sticky-cta-inner .primary-btn {
+      background: rgba(255, 255, 255, 0.95);
+      color: #0f3fbd;
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: none;
+    }
+    .sticky-cta-inner .primary-btn:hover, .sticky-cta-inner .primary-btn:focus-visible {
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 780px) {
+      .hero {
+        padding-top: 4.4rem;
+        padding-bottom: 1rem;
+      }
+      .hero-inner {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        align-items: flex-start;
+        gap: 3rem;
+      }
+      .hero-right-col {
+        margin-top: 0;
+      }
+      .hero-metrics {
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        margin-top: 2rem;
+      }
+      section {
+        padding: 3.2rem 0 2rem;
+      }
+      .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .grid-2, .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .pricing-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .split-2 { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2rem; }
+      .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+      .sticky-cta { display: none; }
+    }
+
+    @media (max-width: 779px) {
+      .nav-actions .ghost-btn { display: none; }
+      .hero-inner { gap: 1.6rem; }
+      .brand-text span { display: none; }
+      .brand-text strong { font-size: var(--text-xs); }
+      .hero-cta-row a { flex: 1 1 auto; min-width: 170px; }
+      .hero-quick span { width: 100%; }
+      .metric-card { grid-template-columns: 1fr; }
+      .plan-tag { position: static; display: inline-flex; margin-bottom: 0.7rem; }
+      .pricing-grid .card p[style] { margin-top: 0 !important; }
+      main { padding-bottom: 7rem; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 1.25rem, var(--content-max)); }
+      .hero { padding-top: 2.2rem; }
+      .hero-heading h1 { line-height: 1.08; }
+      .card, .lead-card, .flow-card, .metric-card, .setup-box { padding: 1rem; }
+      .sticky-cta-inner {
+        width: min(100% - 0.8rem, 420px);
+        gap: 0.55rem;
+        padding: 0.5rem;
+      }
+      .sticky-cta-inner span {
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+      .sticky-cta-inner .primary-btn {
+        min-height: 40px;
+        padding-inline: 0.95rem;
+      }
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      #three-container { display: none; }
+      .bg-gradient { opacity: 1; }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="three-container" aria-hidden="true"></div>
+  <div class="bg-gradient" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="brand" aria-label="Visible Co home">
+          <div class="brand-mark" aria-hidden="true">
+            <img src="47E3090F-E864-4F16-B301-7580C500A83B.jpeg" alt="" />
+          </div>
+          <div class="brand-text">
+            <strong>VISIBLE CO</strong>
+            <span>Visibility systems for growing businesses</span>
+          </div>
+        </a>
+        <div class="nav-actions">
+          <a href="#pricing" class="ghost-btn">Pricing</a>
+          <a href="#services" class="pill-btn">See how it works</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero container" id="top">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-tagline"><span>📍</span><span>Built for service and local businesses</span></div>
+            <div class="hero-heading">
+              <h1>Your business shouldn't lose customers because key info is hard to find.</h1>
+              <p>Visible Co improves how your business appears online, from map listings to website clarity, so customers can quickly understand your services and take action.</p>
+            </div>
+            <div class="hero-meta">
+              <div class="hero-cta-row">
+                <a href="#services" class="primary-btn">Explore our services <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="margin-left:0.2rem;"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="#interest" class="ghost-btn">Join the waitlist</a>
+              </div>
+              <div class="hero-quick">
+                <span><span>✓</span><span>Designed for phones first</span></span>
+                <span><span>✓</span><span>Built for single or multi-location teams</span></span>
+                <span><span>✓</span><span>Clear monthly pricing</span></span>
+              </div>
+            </div>
+            <div class="hero-strip">
+              <div class="hero-strip-row">
+                <span>We act as your outsourced visibility team:</span>
+              </div>
+              <div class="hero-strip-pills">
+                <span>Audit search listings and customer paths</span>
+                <span>Clarify services, offers, and key business info</span>
+                <span>Build or improve websites for easy navigation</span>
+                <span>Manage updates and reputation across platforms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right-col">
+          <div class="hero-visual">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Team meeting around a table reviewing strategy for growth" loading="lazy" decoding="async" />
+            </div>
+            <article class="flow-card">
+              <h2>What we handle each month stays simple on your side.</h2>
+              <div class="flow-steps">
+                <span>Audit discoverability across maps, search, and website</span>
+                <span>Refresh pages so services and offers are always clear</span>
+                <span>Keep Google, Yelp, and key directories accurate</span>
+                <span>Monitor reputation and send concise monthly reports</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <article class="metric-card hero-metrics">
+          <div class="metric">
+            <strong>24h</strong>
+            <span>Typical turnaround for listing and website updates — nothing sits stale.</span>
+          </div>
+          <div class="metric">
+            <strong>3 plans</strong>
+            <span>Simple service tiers designed to be easy to compare.</span>
+          </div>
+          <div class="metric">
+            <strong>48h</strong>
+            <span>Priority update window on the Premium plan.</span>
+          </div>
+          <div class="metric">
+            <strong>1 focus</strong>
+            <span>Built for real businesses — no bloated contracts or enterprise lock-in.</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="container" id="services">
+        <div class="section-head">
+          <span class="section-label">Services</span>
+          <h2>The practical digital work that helps every business get found and trusted.</h2>
+          <p>Business owners don't need jargon — they need accurate online details, a clear mobile experience, and consistent updates where customers search before they buy.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Visibility audit & core info accuracy</h3>
+            <p>We run recurring audits and keep critical business information consistent everywhere customers check.</p>
+            <ul>
+              <li><span>•</span><span>Google Business + Yelp claimed, cleaned, and verified</span></li>
+              <li><span>•</span><span>Hours, service details, and contact info always current</span></li>
+              <li><span>•</span><span>Duplicate or outdated listings cleaned up</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Website clarity & customer journey</h3>
+            <p>Your website should answer customer questions fast, especially on mobile when people are ready to decide.</p>
+            <ul>
+              <li><span>•</span><span>Service and product pages rewritten for clarity and speed</span></li>
+              <li><span>•</span><span>Call, quote, booking, or checkout actions wired in</span></li>
+              <li><span>•</span><span>Messaging updates aligned with current offers and priorities</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Presence management & reporting</h3>
+            <p>We keep a light, steady drumbeat of visible activity and simple owner-level reporting.</p>
+            <ul>
+              <li><span>•</span><span>Review responses within your plan's limit</span></li>
+              <li><span>•</span><span>Platform updates for steady visibility and trust</span></li>
+              <li><span>•</span><span>Monthly snapshot: traffic, clicks, reviews, visible fixes</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="container" id="pricing">
+        <div class="section-head">
+          <span class="section-label">Plans</span>
+          <h2>Flexible options. One setup deep clean.</h2>
+          <p>Everything is structured so you can understand the difference between our services at a glance.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="card">
+            <span class="plan-tag">Starter</span>
+            <p style="margin-top:2.2rem;">For businesses that need core online visibility fixed and maintained.</p>
+            <ul>
+              <li><span>•</span><span>Google Business + Yelp updated monthly</span></li>
+              <li><span>•</span><span>Core website info checks (services, contact, conversion flow)</span></li>
+              <li><span>•</span><span>Respond to up to 10 reviews / month</span></li>
+            </ul>
+            <div style="margin-top: 1.6rem;">
+              <a href="#contact" class="ghost-btn" style="width: 100%;">Contact us</a>
+            </div>
+          </article>
+          <article class="card plan-featured">
+            <span class="plan-tag">Growth</span>
+            <p style="margin-top:2.2rem;">For businesses that want stronger brand clarity and more qualified leads.</p>
+            <ul>
+              <li><span>•</span><span>Everything in Starter</span></li>
+              <li><span>•</span><span>Website updates for service changes, offers, and campaigns</span></li>
+              <li><span>•</span><span>5 weekly platform updates (Google, social, directory highlights)</span></li>
+              <li><span>•</span><span>Respond to up to 15 reviews / month</span></li>
+              <li><span>•</span><span>Monthly report: traffic, clicks, reviews</span></li>
+            </ul>
+            <div style="margin-top: 1.6rem;">
+              <a href="#contact" class="primary-btn" style="width: 100%;">Contact us</a>
+            </div>
+          </article>
+          <article class="card">
+            <span class="plan-tag">Premium</span>
+            <p style="margin-top:2.2rem;">For teams that want a full done-for-you visibility partner.</p>
+            <ul>
+              <li><span>•</span><span>Everything in Starter and Growth</span></li>
+              <li><span>•</span><span>Quarterly brand asset refresh (photo/video planning support)</span></li>
+              <li><span>•</span><span>Simple boosted ad campaign setup (ad spend separate)</span></li>
+              <li><span>•</span><span>Priority updates within 48 hours</span></li>
+              <li><span>•</span><span>Unlimited review responses</span></li>
+              <li><span>•</span><span>Expanded reporting with SEO basics</span></li>
+            </ul>
+            <div style="margin-top: 1.6rem;">
+              <a href="#contact" class="ghost-btn" style="width: 100%;">Contact us</a>
+            </div>
+          </article>
+        </div>
+        
+        <div style="border-radius: var(--radius-card); overflow: hidden; margin-bottom: 1rem; box-shadow: var(--shadow-soft); height: 250px; max-height: 250px; margin-top: 3rem;">
+           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Business dashboard with charts showing company performance" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        </div>
+<div class="setup-box">
+          <h3>The deep clean before upkeep.</h3>
+          <p>All plans begin with a one-time deep clean: claim and verify listings, fix wrong info, upload 10–15 good photos, clean up duplicates, and repair obvious website/mobile issues. After that, your chosen monthly tier begins.</p>
+        </div>
+      </section>
+
+      <section class="container" id="faq">
+        <div class="section-head">
+          <span class="section-label">FAQ</span>
+          <h2>Questions business owners actually ask.</h2>
+          <p>No runaround, no jargon. Here's what owners ask us most.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card faq">
+            <details>
+              <summary><span>Why is there a setup fee on top of the monthly price?</span><span>+</span></summary>
+              <p>The setup fee covers the heavy lifting: claiming and cleaning your Google Business and major directory profiles, verifying info, uploading initial photos, and fixing obvious website/mobile problems before monthly upkeep begins.</p>
+            </details>
+          </article>
+          <article class="card faq">
+            <details>
+              <summary><span>Can you improve our current site, or do we need a rebuild?</span><span>+</span></summary>
+              <p>Not always. We start by fixing what hurts customers most: outdated info, confusing service pages, slow mobile experience, and messy listings. If a rebuild makes more sense, we'll explain why and when.</p>
+            </details>
+          </article>
+          <article class="card faq">
+            <details>
+              <summary><span>How do you handle businesses with multiple locations or teams?</span><span>+</span></summary>
+              <p>Each location has its own profile, offers, and reputation signals, so we treat each as its own visibility profile with a smaller add-on fee per location.</p>
+            </details>
+          </article>
+          <article class="card faq">
+            <details>
+              <summary><span>What do I actually see each month?</span><span>+</span></summary>
+              <p>You get a short, owner-friendly summary: what changed, performance trends, reputation activity, and what improvements were completed that month.</p>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="container" id="interest">
+        <div class="section-head">
+          <span class="section-label">Raise a hand</span>
+          <h2>Two ways to start the conversation.</h2>
+          <p>High-intent teams can book an audit right away. Everyone else can join the list and hear from us when we have room for more businesses.</p>
+        </div>
+        <div class="split-2" id="contact">
+          <article class="lead-card">
+            <h3>Book a free 15-minute visibility audit</h3>
+            <p class="muted">A quick, no-pressure call. We'll review discoverability, website clarity, and customer information flow — then tell you exactly what we'd fix first.</p>
+            <form id="audit-form">
+              <div>
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Jordan from Northstar Home Services" />
+              </div>
+              <div>
+                <label for="shop">Business name</label>
+                <input id="shop" name="shop" type="text" placeholder="Northstar Home Services" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="owner@example.com" />
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" placeholder="Santa Ana" />
+              </div>
+              <div>
+                <label for="issue">Biggest digital headache right now</label>
+                <select id="issue" name="issue">
+                  <option>Important business info is outdated</option>
+                  <option>Website is unclear or hard to use on mobile</option>
+                  <option>Listings, reviews, and profiles are inconsistent</option>
+                  <option>Need a reliable ongoing visibility partner</option>
+                </select>
+              </div>
+              <button type="submit" class="primary-btn" id="audit-btn">Request my audit</button>
+            </form>
+          </article>
+
+          <article class="lead-card">
+            <h3>Join the interest list</h3>
+            <p class="muted">Not ready to jump on a call? Drop your email and we'll follow up when we have capacity for new clients in your area.</p>
+            <form id="interest-form">
+              <div>
+                <label for="interest-email">Email</label>
+                <input id="interest-email" name="email" type="email" placeholder="owner@example.com" />
+              </div>
+              <div>
+                <label for="note">Optional note</label>
+                <textarea id="note" name="note" placeholder="We have 4 locations and customers keep seeing inconsistent info online."></textarea>
+              </div>
+              <button type="submit" class="ghost-btn" id="interest-btn">Join waitlist</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <p>© 2026 Visible Co. Visibility, websites, and presence management for growing businesses.</p>
+        <p><a href="#contact" style="text-decoration: underline;">Book a free audit</a></p>
+      </div>
+    </footer>
+
+    <div class="sticky-cta" aria-hidden="false">
+      <div class="sticky-cta-inner">
+        <span>Free 15-minute visibility audit for business owners</span>
+        <a href="#contact" class="primary-btn">Book now</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Reveal Animations Setup
+      const elementsToReveal = document.querySelectorAll('.hero-inner > div, .section-head, .card, .metric-card, .flow-card, .lead-card, .setup-box');
+      
+      elementsToReveal.forEach((el) => {
+        el.classList.add('reveal');
+        const parent = el.parentElement;
+        if (parent && (parent.classList.contains('grid-3') || parent.classList.contains('grid-2') || parent.classList.contains('pricing-grid') || parent.classList.contains('faq-grid') || parent.classList.contains('split-2'))) {
+           const children = Array.from(parent.children);
+           const i = children.indexOf(el);
+           el.style.transitionDelay = `${i * 0.1}s`;
+        }
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      elementsToReveal.forEach(el => observer.observe(el));
+    });
+
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const container = document.getElementById('three-container');
+      if (!container || typeof THREE === 'undefined') return;
+
+      // Clean ambient particle field — subtle, calm motion behind content.
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 35;
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      const isSmallScreen = window.matchMedia('(max-width: 779px)').matches;
+      const count = isSmallScreen ? 420 : 800;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(count * 3);
+      const colors = new Float32Array(count * 3);
+      const scales = new Float32Array(count);
+
+      for (let i = 0; i < count; i++) {
+        const i3 = i * 3;
+        positions[i3] = (Math.random() - 0.5) * 80;
+        positions[i3 + 1] = (Math.random() - 0.5) * 45;
+        positions[i3 + 2] = (Math.random() - 0.5) * 35;
+
+        // Gentle navy-to-blue tint range
+        const t = Math.random();
+        colors[i3] = 0.06 + t * 0.14;
+        colors[i3 + 1] = 0.16 + t * 0.28;
+        colors[i3 + 2] = 0.34 + t * 0.5;
+
+        scales[i] = 0.6 + Math.random() * 1.4;
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+      const material = new THREE.PointsMaterial({
+        size: 0.5,
+        transparent: true,
+        opacity: 0.45,
+        vertexColors: true,
+        sizeAttenuation: true,
+        depthWrite: false,
+        blending: THREE.NormalBlending
+      });
+
+      const points = new THREE.Points(geometry, material);
+      scene.add(points);
+
+      const initialY = positions.slice();
+
+      function animate(now) {
+        if (document.hidden) {
+          requestAnimationFrame(animate);
+          return;
+        }
+        const t = now * 0.00015;
+        const pos = geometry.attributes.position.array;
+
+        for (let i = 0; i < count; i++) {
+          const i3 = i * 3;
+          pos[i3] += Math.sin(t + i * 0.07) * 0.002;
+          pos[i3 + 1] = initialY[i3 + 1] + Math.sin(t * 1.4 + i * 0.13) * (0.5 + scales[i] * 0.25);
+        }
+
+        geometry.attributes.position.needsUpdate = true;
+        points.rotation.y = Math.sin(t * 0.8) * 0.06;
+        points.rotation.x = Math.cos(t * 0.6) * 0.04;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    })();
+
+    // Notion Form Submit Handlers
+    async function handleFormSubmit(event, formType) {
+      event.preventDefault();
+      const form = event.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+
+      btn.innerText = "Sending...";
+      btn.disabled = true;
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.type = formType; // tell backend if it's 'audit' or 'interest'
+
+      try {
+        const response = await fetch('/api/notion-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          form.innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--color-success); font-weight: 600;">Success! We received your information.</div>';
+        } else {
+          const body = await response.json().catch(() => ({}));
+          btn.innerText = originalText;
+          btn.disabled = false;
+          const errEl = form.querySelector('.form-error') || document.createElement('p');
+          errEl.className = 'form-error';
+          errEl.style.cssText = 'color:var(--color-danger);font-size:var(--text-sm);margin-top:0.5rem;';
+          errEl.textContent = body.error || 'Something went wrong. Try again.';
+          if (!form.querySelector('.form-error')) form.appendChild(errEl);
+        }
+      } catch (err) {
+        console.error(err);
+        btn.innerText = originalText;
+        btn.disabled = false;
+        const errEl = form.querySelector('.form-error') || document.createElement('p');
+        errEl.className = 'form-error';
+        errEl.style.cssText = 'color:var(--color-danger);font-size:var(--text-sm);margin-top:0.5rem;';
+        errEl.textContent = 'Network error — check your connection and try again.';
+        if (!form.querySelector('.form-error')) form.appendChild(errEl);
+      }
+    }
+
+    const auditForm = document.getElementById('audit-form');
+    if (auditForm) auditForm.addEventListener('submit', (e) => handleFormSubmit(e, 'audit'));
+    
+    const interestForm = document.getElementById('interest-form');
+    if (interestForm) interestForm.addEventListener('submit', (e) => handleFormSubmit(e, 'interest'));
+
+  </script>
+</body>
+</html>

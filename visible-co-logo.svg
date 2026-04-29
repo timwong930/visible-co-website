@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Visible Co logo">
+  <defs>
+    <linearGradient id="barBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2374ff"/>
+      <stop offset="100%" stop-color="#1c45e0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="#f4f5f7"/>
+
+  <g transform="translate(255,220)">
+    <path d="M130 120h118l129 224 131-101-170 213z" fill="#112552"/>
+    <path d="M368 234l60-21v138l-60 13z" fill="url(#barBlue)"/>
+    <path d="M439 209l60-21v172l-60 14z" fill="url(#barBlue)"/>
+    <path d="M510 175l64-22v209l-64 16z" fill="url(#barBlue)"/>
+    <path d="M296 349c67-72 168-117 293-136-90 32-176 82-242 154h-51z" fill="#173f98"/>
+
+    <text x="0" y="575" font-size="166" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#112552" letter-spacing="1">Visible</text>
+    <text x="566" y="575" font-size="166" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#2374ff">Co</text>
+
+    <line x1="72" y1="634" x2="182" y2="634" stroke="#2374ff" stroke-width="6"/>
+    <line x1="748" y1="634" x2="858" y2="634" stroke="#2374ff" stroke-width="6"/>
+    <text x="218" y="650" font-size="56" letter-spacing="20" font-family="Inter, Arial, sans-serif" fill="#112552">DIGITAL MARKETING</text>
+  </g>
+</svg>
