@@ -1,52 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Auto detailing website mockup">
   <defs>
-    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#08111f"/>
-      <stop offset="100%" stop-color="#1b2030"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2ecff"/>
+      <stop offset="40%" stop-color="#b589ff"/>
+      <stop offset="100%" stop-color="#35d6c6"/>
     </linearGradient>
-    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#8db9ff"/>
-      <stop offset="100%" stop-color="#dbeaff"/>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12141e"/>
+      <stop offset="100%" stop-color="#232a42"/>
     </linearGradient>
-    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000" flood-opacity="0.35"/>
+    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bfa3ff"/>
+      <stop offset="100%" stop-color="#9ff2e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#27184a" flood-opacity="0.28"/>
     </filter>
   </defs>
-  <rect width="1200" height="750" fill="url(#bg3)"/>
-  <circle cx="980" cy="110" r="180" fill="#8db9ff" opacity="0.10"/>
-  <circle cx="160" cy="620" r="220" fill="#f0f5ff" opacity="0.05"/>
-  <rect x="96" y="82" width="1008" height="586" rx="34" fill="#0a101c" filter="url(#shadow3)"/>
-  <rect x="96" y="82" width="1008" height="54" rx="34" fill="#111a2c"/>
-  <circle cx="136" cy="109" r="8" fill="#ff5f57"/>
-  <circle cx="160" cy="109" r="8" fill="#febc2e"/>
-  <circle cx="184" cy="109" r="8" fill="#28c840"/>
-  <rect x="846" y="98" width="186" height="22" rx="11" fill="#1a2439"/>
-  <rect x="126" y="178" width="370" height="18" rx="9" fill="#2f4266"/>
-  <rect x="126" y="214" width="280" height="16" rx="8" fill="#c2d7ff" opacity="0.75"/>
-  <rect x="126" y="258" width="192" height="50" rx="25" fill="url(#accent3)"/>
-  <rect x="330" y="258" width="204" height="50" rx="25" fill="#162136" stroke="#2d4064"/>
-  <text x="222" y="290" font-family="Arial, sans-serif" font-size="18" fill="#09111b" font-weight="700" text-anchor="middle">Book a detail</text>
-  <text x="432" y="290" font-family="Arial, sans-serif" font-size="18" fill="#e4eeff" font-weight="700" text-anchor="middle">Memberships</text>
-  <rect x="126" y="360" width="250" height="194" rx="24" fill="#121a2d" stroke="#26344e"/>
-  <rect x="396" y="360" width="250" height="194" rx="24" fill="#121a2d" stroke="#26344e"/>
-  <rect x="666" y="360" width="322" height="194" rx="24" fill="#121a2d" stroke="#26344e"/>
-  <rect x="152" y="388" width="198" height="104" rx="18" fill="#18243d"/>
-  <rect x="152" y="388" width="198" height="32" rx="18" fill="#243659"/>
-  <rect x="168" y="436" width="166" height="10" rx="5" fill="#8db9ff"/>
-  <rect x="168" y="458" width="138" height="10" rx="5" fill="#d8e7ff" opacity="0.82"/>
-  <rect x="168" y="486" width="94" height="34" rx="17" fill="#1f2d49"/>
-  <text x="215" y="508" font-family="Arial, sans-serif" font-size="13" fill="#d8e7ff" font-weight="700" text-anchor="middle">Before</text>
-  <rect x="422" y="388" width="198" height="104" rx="18" fill="#18243d"/>
-  <rect x="422" y="388" width="198" height="32" rx="18" fill="#243659"/>
-  <rect x="438" y="436" width="166" height="10" rx="5" fill="#8db9ff"/>
-  <rect x="438" y="458" width="138" height="10" rx="5" fill="#d8e7ff" opacity="0.82"/>
-  <rect x="438" y="486" width="94" height="34" rx="17" fill="#1f2d49"/>
-  <text x="485" y="508" font-family="Arial, sans-serif" font-size="13" fill="#d8e7ff" font-weight="700" text-anchor="middle">After</text>
-  <rect x="688" y="388" width="274" height="104" rx="18" fill="#18243d"/>
-  <rect x="688" y="388" width="274" height="32" rx="18" fill="#243659"/>
-  <rect x="706" y="432" width="234" height="10" rx="5" fill="#8db9ff"/>
-  <rect x="706" y="456" width="184" height="10" rx="5" fill="#d8e7ff" opacity="0.82"/>
-  <rect x="706" y="486" width="116" height="34" rx="17" fill="#1f2d49"/>
-  <text x="764" y="508" font-family="Arial, sans-serif" font-size="13" fill="#d8e7ff" font-weight="700" text-anchor="middle">Package</text>
-  <text x="126" y="612" font-family="Arial, sans-serif" font-size="15" fill="#8fb4e8" letter-spacing="2">AUTO DETAILING WEBSITE MOCKUP</text>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <circle cx="1060" cy="120" r="170" fill="#fff" opacity="0.18"/>
+  <circle cx="160" cy="620" r="220" fill="#7d58ef" opacity="0.12"/>
+  <path d="M0 612c120-60 236-72 352-44s198 100 320 100 262-38 528-170v252H0Z" fill="#fff" opacity="0.14"/>
+
+  <g filter="url(#shadow)">
+    <rect x="116" y="90" width="968" height="564" rx="38" fill="#f8f6ff"/>
+    <rect x="116" y="90" width="968" height="58" rx="38" fill="#e6ddff"/>
+    <circle cx="154" cy="119" r="8" fill="#ff6b57"/>
+    <circle cx="178" cy="119" r="8" fill="#ffb84d"/>
+    <circle cx="202" cy="119" r="8" fill="#47c97f"/>
+
+    <rect x="160" y="184" width="318" height="18" rx="9" fill="#7f65ff"/>
+    <rect x="160" y="218" width="390" height="18" rx="9" fill="#171b28"/>
+    <rect x="160" y="254" width="268" height="12" rx="6" fill="#7580a4"/>
+    <rect x="160" y="286" width="196" height="50" rx="25" fill="url(#cta)"/>
+    <text x="258" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#14161f" text-anchor="middle">Book detail</text>
+    <rect x="368" y="286" width="196" height="50" rx="25" fill="#fff" stroke="#c2b1ff"/>
+    <text x="466" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#7f65ff" text-anchor="middle">Packages</text>
+
+    <rect x="160" y="366" width="240" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
+    <rect x="420" y="366" width="240" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
+    <rect x="680" y="366" width="244" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
+
+    <path d="M182 482h138" stroke="#bfa3ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M182 456h94" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="180" y="406" width="78" height="34" rx="17" fill="#efe9ff"/>
+    <path d="M200 416h38" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M200 426h24" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+
+    <path d="M440 488h132" stroke="#bfa3ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M440 456h96" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="438" y="406" width="78" height="34" rx="17" fill="#efe9ff"/>
+    <path d="M458 416h38" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M458 426h24" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+
+    <path d="M706 484h154" stroke="#35d6c6" stroke-width="10" stroke-linecap="round"/>
+    <path d="M706 456h112" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="706" y="406" width="78" height="34" rx="17" fill="#ebfff8"/>
+    <path d="M726 416h38" stroke="#35a99d" stroke-width="5" stroke-linecap="round"/>
+    <path d="M726 426h24" stroke="#35a99d" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <text x="116" y="620" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="#5632a7">AUTO DETAILING WEBSITE MOCKUP</text>
 </svg>
