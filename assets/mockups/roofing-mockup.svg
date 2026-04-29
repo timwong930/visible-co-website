@@ -1,83 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Roofing website mockup" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fff4e4"/>
-      <stop offset="45%" stop-color="#ffd0a0"/>
-      <stop offset="100%" stop-color="#e86b3a"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9d7ad"/>
+      <stop offset="55%" stop-color="#ff9b60"/>
+      <stop offset="100%" stop-color="#27374f"/>
     </linearGradient>
-    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#151f2f"/>
-      <stop offset="100%" stop-color="#243e63"/>
-    </linearGradient>
-    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffb86b"/>
-      <stop offset="100%" stop-color="#ffe2b6"/>
-    </linearGradient>
-    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#7a2e10" flood-opacity="0.26"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#172033" flood-opacity="0.24"/>
     </filter>
   </defs>
   <rect width="1200" height="750" fill="url(#bg)"/>
-  <circle cx="1080" cy="100" r="165" fill="#fff" opacity="0.22"/>
-  <circle cx="140" cy="610" r="220" fill="#c75d2b" opacity="0.12"/>
-  <path d="M0 614c148-78 258-84 374-50s170 98 302 98 250-54 524-170v258H0Z" fill="#fff" opacity="0.16"/>
-
+  <circle cx="1110" cy="110" r="150" fill="#fff" opacity="0.18"/>
+  <circle cx="130" cy="610" r="210" fill="#f2a260" opacity="0.12"/>
   <g filter="url(#shadow)">
-    <rect x="108" y="84" width="984" height="580" rx="38" fill="#fff8f1"/>
-    <rect x="108" y="84" width="984" height="60" rx="38" fill="#ffe2c8"/>
-    <circle cx="148" cy="114" r="8" fill="#ff6b57"/>
-    <circle cx="172" cy="114" r="8" fill="#ffb84d"/>
-    <circle cx="196" cy="114" r="8" fill="#47c97f"/>
+    <rect x="72" y="56" width="1056" height="638" rx="42" fill="#fef7f1"/>
+    <rect x="72" y="56" width="1056" height="56" rx="42" fill="#f6ddcb"/>
+    <circle cx="114" cy="84" r="8" fill="#ff6b57"/>
+    <circle cx="138" cy="84" r="8" fill="#ffbf4d"/>
+    <circle cx="162" cy="84" r="8" fill="#59d58f"/>
+    <rect x="260" y="72" width="682" height="28" rx="14" fill="#fff" stroke="#f1c8a7"/>
+    <rect x="946" y="70" width="132" height="32" rx="16" fill="#fff" stroke="#f1c8a7"/>
+    <text x="298" y="91" font-family="Arial, sans-serif" font-size="14" fill="#9d5b30">northpeakroofing.com/home</text>
+    <text x="975" y="91" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#b55c2e">ROOFING</text>
 
-    <rect x="156" y="182" width="272" height="18" rx="9" fill="#e96a3d"/>
-    <rect x="156" y="216" width="360" height="20" rx="10" fill="#243750"/>
-    <rect x="156" y="252" width="260" height="12" rx="6" fill="#7d8da6"/>
-    <rect x="156" y="286" width="176" height="50" rx="25" fill="url(#cta)"/>
-    <text x="244" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1a1f2e" text-anchor="middle">Get a roof quote</text>
-    <rect x="346" y="286" width="172" height="50" rx="25" fill="#fff" stroke="#f0c29f"/>
-    <text x="432" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#c2652d" text-anchor="middle">See projects</text>
+    <rect x="114" y="142" width="972" height="492" rx="32" fill="#fffaf4" stroke="#f0d4ba"/>
+    <text x="160" y="184" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#162033">North Peak Roofing</text>
+    <text x="400" y="184" font-family="Arial, sans-serif" font-size="15" fill="#6b7181">Repairs • Replacements • Inspections • Financing</text>
+    <rect x="872" y="164" width="168" height="34" rx="17" fill="#e86c3a"/>
+    <text x="898" y="186" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Get roof quote</text>
 
-    <rect x="156" y="374" width="220" height="170" rx="26" fill="#fff" stroke="#ffd2b5"/>
-    <rect x="400" y="374" width="220" height="170" rx="26" fill="#fff" stroke="#ffd2b5"/>
-    <rect x="644" y="374" width="284" height="170" rx="26" fill="#fff" stroke="#ffd2b5"/>
+    <rect x="160" y="228" width="430" height="236" rx="28" fill="#fff" stroke="#f0d7bf"/>
+    <text x="194" y="280" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#182033">Fast roof repairs</text>
+    <text x="194" y="334" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#182033">for homes that need</text>
+    <text x="194" y="388" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#182033">help now.</text>
+    <rect x="194" y="414" width="152" height="34" rx="17" fill="#e86c3a"/>
+    <text x="220" y="436" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Book inspection</text>
+    <rect x="356" y="414" width="146" height="34" rx="17" fill="#fff" stroke="#f1c8a7"/>
+    <text x="384" y="436" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#c46331">See projects</text>
 
-    <path d="M184 488h136" stroke="#e96a3d" stroke-width="10" stroke-linecap="round"/>
-    <path d="M184 458h108" stroke="#243750" stroke-width="10" stroke-linecap="round" opacity="0.92"/>
-    <path d="M184 430h74" stroke="#a4b1c3" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
-    <circle cx="216" cy="402" r="20" fill="#ffe4d3"/>
-    <path d="M202 402h28" stroke="#c95b25" stroke-width="5" stroke-linecap="round"/>
+    <rect x="618" y="228" width="414" height="236" rx="30" fill="#1f2c42"/>
+    <text x="650" y="272" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#fff">Storm-ready team</text>
+    <text x="650" y="300" font-family="Arial, sans-serif" font-size="14" fill="#bed0ee">Inspection photos • leak notes • same-day dispatch</text>
+    <polygon points="646,402 748,324 850,402 952,324 1002,358 1002,436 646,436" fill="#ffb86d"/>
+    <polygon points="646,402 748,324 850,402 952,324 982,346 880,422 748,346 704,378" fill="#e86c3a"/>
+    <rect x="764" y="396" width="106" height="104" rx="12" fill="#ffe9d4" stroke="#c96a39" stroke-width="4"/>
+    <rect x="802" y="430" width="30" height="70" fill="#7b3119"/>
+    <rect x="918" y="242" width="74" height="48" rx="14" fill="#fff"/>
+    <text x="932" y="273" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#e86c3a">24/7</text>
 
-    <path d="M428 488h136" stroke="#e96a3d" stroke-width="10" stroke-linecap="round"/>
-    <path d="M428 458h108" stroke="#243750" stroke-width="10" stroke-linecap="round" opacity="0.92"/>
-    <path d="M428 430h74" stroke="#a4b1c3" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
-    <circle cx="460" cy="402" r="20" fill="#ffe4d3"/>
-    <path d="M446 402h28" stroke="#c95b25" stroke-width="5" stroke-linecap="round"/>
+    <rect x="160" y="496" width="224" height="92" rx="20" fill="#fff" stroke="#ffb86d"/>
+    <rect x="178" y="514" width="46" height="46" rx="12" fill="#ffb86d"/>
+    <text x="242" y="530" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#162033">Inspection</text>
+    <text x="242" y="556" font-family="Arial, sans-serif" font-size="14" fill="#6b7181">photo checklist</text>
 
-    <path d="M688 488h166" stroke="#e96a3d" stroke-width="10" stroke-linecap="round"/>
-    <path d="M688 458h118" stroke="#243750" stroke-width="10" stroke-linecap="round" opacity="0.92"/>
-    <path d="M688 430h82" stroke="#a4b1c3" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
-    <circle cx="724" cy="402" r="20" fill="#ffe4d3"/>
-    <path d="M710 402h28" stroke="#c95b25" stroke-width="5" stroke-linecap="round"/>
+    <rect x="398" y="496" width="224" height="92" rx="20" fill="#fff" stroke="#e86c3a"/>
+    <rect x="416" y="514" width="46" height="46" rx="12" fill="#e86c3a"/>
+    <text x="480" y="530" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#162033">Repairs</text>
+    <text x="480" y="556" font-family="Arial, sans-serif" font-size="14" fill="#6b7181">same-day slots</text>
+
+    <rect x="636" y="496" width="224" height="92" rx="20" fill="#fff" stroke="#ffcf94"/>
+    <rect x="654" y="514" width="46" height="46" rx="12" fill="#ffcf94"/>
+    <text x="718" y="530" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#162033">Replacement</text>
+    <text x="718" y="556" font-family="Arial, sans-serif" font-size="14" fill="#6b7181">warranty options</text>
   </g>
-
-  <g transform="translate(714 176)">
-    <rect x="0" y="120" width="280" height="170" rx="28" fill="url(#screen)"/>
-    <path d="M28 122h224" stroke="#ffb86b" stroke-width="10" stroke-linecap="round"/>
-    <path d="M54 178l86-66 86 66" fill="none" stroke="#ffb86b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="86" y="178" width="84" height="66" rx="14" fill="#ffe7d2" stroke="#ffb86b" stroke-width="5"/>
-    <path d="M118 244v-26h20v26" fill="none" stroke="#7b3119" stroke-width="7" stroke-linecap="round"/>
-    <path d="M48 156h184" stroke="#ffffff" stroke-opacity="0.24" stroke-width="10" stroke-linecap="round"/>
-    <path d="M42 270h196" stroke="#ffffff" stroke-opacity="0.24" stroke-width="10" stroke-linecap="round"/>
-    <rect x="184" y="146" width="64" height="32" rx="16" fill="#fff" opacity="0.88"/>
-    <text x="216" y="168" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#b14f25" text-anchor="middle">24/7</text>
-  </g>
-
-  <path d="M730 520l144-106 144 106" fill="none" stroke="#7b3119" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M750 520l124-88 124 88" fill="none" stroke="#ffb86b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/>
-  <rect x="786" y="520" width="100" height="96" rx="16" fill="#ffe7d2" stroke="#e58b59" stroke-width="5"/>
-  <path d="M824 616v-32h24v32" fill="none" stroke="#7b3119" stroke-width="7" stroke-linecap="round"/>
-  <rect x="146" y="150" width="118" height="30" rx="15" fill="#fff" opacity="0.88"/>
-  <text x="205" y="171" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#b14f25" text-anchor="middle">FAST ROOF REPAIRS</text>
-
-  <text x="108" y="620" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="#8c4924">ROOFING WEBSITE MOCKUP</text>
 </svg>
