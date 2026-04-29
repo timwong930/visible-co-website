@@ -1,61 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Plumbing website mockup">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Plumbing website mockup" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e7fbff"/>
-      <stop offset="45%" stop-color="#7be3ff"/>
-      <stop offset="100%" stop-color="#1e7bff"/>
+      <stop offset="0%" stop-color="#f1fbff"/>
+      <stop offset="45%" stop-color="#8fe8ff"/>
+      <stop offset="100%" stop-color="#0e74ff"/>
     </linearGradient>
     <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#081522"/>
-      <stop offset="100%" stop-color="#12365a"/>
+      <stop offset="0%" stop-color="#06111d"/>
+      <stop offset="100%" stop-color="#14345a"/>
     </linearGradient>
-    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#7ef0ff"/>
-      <stop offset="100%" stop-color="#c9fbff"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#74f1ff"/>
+      <stop offset="100%" stop-color="#dafdff"/>
     </linearGradient>
     <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#08355e" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#08406d" flood-opacity="0.24"/>
     </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#d3f7ff" stroke-opacity="0.55" stroke-width="1"/>
+    </pattern>
   </defs>
   <rect width="1200" height="750" fill="url(#bg)"/>
-  <circle cx="1030" cy="110" r="150" fill="#fff" opacity="0.18"/>
-  <circle cx="150" cy="620" r="220" fill="#0151a6" opacity="0.12"/>
-  <path d="M0 616c136-76 242-82 360-48s164 112 300 112 252-44 540-174v244H0Z" fill="#fff" opacity="0.14"/>
+  <rect width="1200" height="750" fill="url(#grid)" opacity="0.52"/>
+  <circle cx="1020" cy="118" r="150" fill="#fff" opacity="0.16"/>
+  <circle cx="130" cy="606" r="218" fill="#0051a9" opacity="0.12"/>
 
   <g filter="url(#shadow)">
-    <rect x="112" y="88" width="976" height="566" rx="38" fill="#f6fdff"/>
-    <rect x="112" y="88" width="976" height="58" rx="38" fill="#c9f5ff"/>
-    <circle cx="150" cy="117" r="8" fill="#ff6b57"/>
-    <circle cx="174" cy="117" r="8" fill="#ffb84d"/>
-    <circle cx="198" cy="117" r="8" fill="#47c97f"/>
+    <rect x="112" y="84" width="976" height="582" rx="38" fill="#f7feff"/>
+    <rect x="112" y="84" width="976" height="58" rx="38" fill="#d8f8ff"/>
+    <circle cx="150" cy="113" r="8" fill="#ff6b57"/>
+    <circle cx="174" cy="113" r="8" fill="#ffb84d"/>
+    <circle cx="198" cy="113" r="8" fill="#47c97f"/>
 
-    <rect x="158" y="182" width="292" height="18" rx="9" fill="#1e7bff"/>
-    <rect x="158" y="216" width="372" height="18" rx="9" fill="#0b2340"/>
-    <rect x="158" y="252" width="258" height="12" rx="6" fill="#6e7f92"/>
-    <rect x="158" y="286" width="202" height="52" rx="26" fill="url(#cta)"/>
-    <text x="259" y="319" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#062037" text-anchor="middle">Get a plumbing quote</text>
-    <rect x="372" y="286" width="190" height="52" rx="26" fill="#fff" stroke="#93dff2"/>
-    <text x="467" y="319" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d7cff" text-anchor="middle">Emergency help</text>
+    <rect x="156" y="180" width="272" height="18" rx="9" fill="#0e74ff"/>
+    <rect x="156" y="214" width="372" height="18" rx="9" fill="#07203a"/>
+    <rect x="156" y="250" width="262" height="12" rx="6" fill="#6e829b"/>
+    <rect x="156" y="286" width="194" height="50" rx="25" fill="url(#accent)"/>
+    <text x="253" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#062037" text-anchor="middle">Request service</text>
+    <rect x="364" y="286" width="176" height="50" rx="25" fill="#fff" stroke="#a8eaf6"/>
+    <text x="452" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0e74ff" text-anchor="middle">24/7 support</text>
 
-    <rect x="158" y="368" width="228" height="168" rx="24" fill="#fff" stroke="#bfefff"/>
-    <rect x="412" y="368" width="228" height="168" rx="24" fill="#fff" stroke="#bfefff"/>
-    <rect x="666" y="368" width="270" height="168" rx="24" fill="#fff" stroke="#bfefff"/>
+    <rect x="156" y="370" width="230" height="178" rx="26" fill="#fff" stroke="#c8f2ff"/>
+    <rect x="414" y="370" width="230" height="178" rx="26" fill="#fff" stroke="#c8f2ff"/>
+    <rect x="672" y="370" width="270" height="178" rx="26" fill="#fff" stroke="#c8f2ff"/>
 
-    <circle cx="214" cy="426" r="32" fill="#e4fbff"/>
-    <path d="M201 426h26M214 413v26" stroke="#1e7bff" stroke-width="6" stroke-linecap="round"/>
-    <path d="M176 490h110" stroke="#1e7bff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M176 464h84" stroke="#0b2340" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <circle cx="214" cy="432" r="34" fill="#ebfcff"/>
+    <path d="M200 432h28M214 418v28" stroke="#0e74ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M182 494h114" stroke="#0e74ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M182 468h82" stroke="#07203a" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
 
-    <circle cx="468" cy="426" r="32" fill="#e4fbff"/>
-    <path d="M455 426h26M468 413v26" stroke="#1e7bff" stroke-width="6" stroke-linecap="round"/>
-    <path d="M430 490h112" stroke="#1e7bff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M430 464h92" stroke="#0b2340" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <circle cx="472" cy="432" r="34" fill="#ebfcff"/>
+    <path d="M458 432h28M472 418v28" stroke="#0e74ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M440 494h114" stroke="#0e74ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M440 468h84" stroke="#07203a" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
 
-    <circle cx="742" cy="426" r="32" fill="#e4fbff"/>
-    <path d="M729 426h26M742 413v26" stroke="#1e7bff" stroke-width="6" stroke-linecap="round"/>
-    <path d="M706 490h142" stroke="#1e7bff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M706 464h102" stroke="#0b2340" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <circle cx="744" cy="432" r="34" fill="#ebfcff"/>
+    <path d="M730 432h28M744 418v28" stroke="#0e74ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M712 494h146" stroke="#0e74ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M712 468h102" stroke="#07203a" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
   </g>
+
+  <g transform="translate(730 164)">
+    <path d="M42 40h116c22 0 40 18 40 40s-18 40-40 40h-72c-18 0-32 14-32 32v8" fill="none" stroke="#0e74ff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M126 120c0 32-26 58-58 58H38c-22 0-40 18-40 40s18 40 40 40h58" fill="none" stroke="#07203a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="196" cy="80" r="40" fill="#ebfcff" stroke="#0e74ff" stroke-width="6"/>
+    <path d="M184 80h24M196 68v24" stroke="#0e74ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M166 128h60" stroke="#07203a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M180 152h32" stroke="#07203a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M76 198c10-18 24-28 42-28h72" fill="none" stroke="#0e74ff" stroke-width="14" stroke-linecap="round"/>
+    <path d="M66 238h170" stroke="#74f1ff" stroke-width="12" stroke-linecap="round"/>
+    <rect x="46" y="260" width="194" height="96" rx="22" fill="#0e74ff"/>
+    <text x="143" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">LIVE PIPE REPAIR</text>
+    <text x="143" y="324" font-family="Arial, sans-serif" font-size="14" fill="#dff8ff" text-anchor="middle">Burst lines • leak checks • emergency callouts</text>
+  </g>
+
+  <rect x="766" y="150" width="176" height="34" rx="17" fill="#fff" opacity="0.86"/>
+  <text x="854" y="173" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#07568a" text-anchor="middle">EMERGENCY PLUMBING</text>
 
   <text x="112" y="620" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="#07568a">PLUMBING WEBSITE MOCKUP</text>
 </svg>

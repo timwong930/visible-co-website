@@ -1,64 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Auto detailing website mockup">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Auto detailing website mockup" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f2ecff"/>
-      <stop offset="40%" stop-color="#b589ff"/>
-      <stop offset="100%" stop-color="#35d6c6"/>
+      <stop offset="0%" stop-color="#f6f0ff"/>
+      <stop offset="48%" stop-color="#b58cff"/>
+      <stop offset="100%" stop-color="#21d7cb"/>
     </linearGradient>
     <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#12141e"/>
-      <stop offset="100%" stop-color="#232a42"/>
+      <stop offset="0%" stop-color="#10131e"/>
+      <stop offset="100%" stop-color="#222a40"/>
     </linearGradient>
-    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#bfa3ff"/>
-      <stop offset="100%" stop-color="#9ff2e5"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bca2ff"/>
+      <stop offset="100%" stop-color="#8cf2e5"/>
     </linearGradient>
     <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#27184a" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#251847" flood-opacity="0.26"/>
     </filter>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
   <rect width="1200" height="750" fill="url(#bg)"/>
-  <circle cx="1060" cy="120" r="170" fill="#fff" opacity="0.18"/>
-  <circle cx="160" cy="620" r="220" fill="#7d58ef" opacity="0.12"/>
-  <path d="M0 612c120-60 236-72 352-44s198 100 320 100 262-38 528-170v252H0Z" fill="#fff" opacity="0.14"/>
+  <path d="M0 620c130-54 248-74 376-54s212 102 340 102 242-36 484-148v230H0Z" fill="#fff" opacity="0.12"/>
+  <circle cx="1040" cy="120" r="170" fill="#fff" opacity="0.16"/>
+  <circle cx="150" cy="610" r="210" fill="#6e4ae6" opacity="0.12"/>
 
   <g filter="url(#shadow)">
-    <rect x="116" y="90" width="968" height="564" rx="38" fill="#f8f6ff"/>
-    <rect x="116" y="90" width="968" height="58" rx="38" fill="#e6ddff"/>
-    <circle cx="154" cy="119" r="8" fill="#ff6b57"/>
-    <circle cx="178" cy="119" r="8" fill="#ffb84d"/>
-    <circle cx="202" cy="119" r="8" fill="#47c97f"/>
+    <rect x="114" y="88" width="972" height="570" rx="38" fill="#f8f7ff"/>
+    <rect x="114" y="88" width="972" height="58" rx="38" fill="#e7deff"/>
+    <circle cx="152" cy="117" r="8" fill="#ff6b57"/>
+    <circle cx="176" cy="117" r="8" fill="#ffb84d"/>
+    <circle cx="200" cy="117" r="8" fill="#47c97f"/>
 
-    <rect x="160" y="184" width="318" height="18" rx="9" fill="#7f65ff"/>
-    <rect x="160" y="218" width="390" height="18" rx="9" fill="#171b28"/>
-    <rect x="160" y="254" width="268" height="12" rx="6" fill="#7580a4"/>
-    <rect x="160" y="286" width="196" height="50" rx="25" fill="url(#cta)"/>
-    <text x="258" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#14161f" text-anchor="middle">Book detail</text>
-    <rect x="368" y="286" width="196" height="50" rx="25" fill="#fff" stroke="#c2b1ff"/>
-    <text x="466" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#7f65ff" text-anchor="middle">Packages</text>
+    <rect x="160" y="184" width="300" height="18" rx="9" fill="#7e62ff"/>
+    <rect x="160" y="218" width="374" height="18" rx="9" fill="#131826"/>
+    <rect x="160" y="254" width="264" height="12" rx="6" fill="#7682a4"/>
+    <rect x="160" y="286" width="182" height="50" rx="25" fill="url(#accent)"/>
+    <text x="251" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#14161f" text-anchor="middle">Book detail</text>
+    <rect x="356" y="286" width="188" height="50" rx="25" fill="#fff" stroke="#c9bdff"/>
+    <text x="450" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#7e62ff" text-anchor="middle">See packages</text>
 
-    <rect x="160" y="366" width="240" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
-    <rect x="420" y="366" width="240" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
-    <rect x="680" y="366" width="244" height="170" rx="24" fill="#fff" stroke="#d8cbff"/>
+    <rect x="160" y="370" width="238" height="178" rx="26" fill="#fff" stroke="#dccfff"/>
+    <rect x="424" y="370" width="238" height="178" rx="26" fill="#fff" stroke="#dccfff"/>
+    <rect x="688" y="370" width="250" height="178" rx="26" fill="#fff" stroke="#dccfff"/>
 
-    <path d="M182 482h138" stroke="#bfa3ff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M182 456h94" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
-    <rect x="180" y="406" width="78" height="34" rx="17" fill="#efe9ff"/>
-    <path d="M200 416h38" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
-    <path d="M200 426h24" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M182 502h144" stroke="#7e62ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M182 474h96" stroke="#131826" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="180" y="404" width="82" height="36" rx="18" fill="#f1ecff"/>
+    <path d="M200 418h42" stroke="#7e62ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M200 428h26" stroke="#7e62ff" stroke-width="5" stroke-linecap="round"/>
 
-    <path d="M440 488h132" stroke="#bfa3ff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M440 456h96" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
-    <rect x="438" y="406" width="78" height="34" rx="17" fill="#efe9ff"/>
-    <path d="M458 416h38" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
-    <path d="M458 426h24" stroke="#7f65ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M446 500h142" stroke="#7e62ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M446 474h100" stroke="#131826" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="444" y="404" width="82" height="36" rx="18" fill="#f1ecff"/>
+    <path d="M464 418h42" stroke="#7e62ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M464 428h26" stroke="#7e62ff" stroke-width="5" stroke-linecap="round"/>
 
-    <path d="M706 484h154" stroke="#35d6c6" stroke-width="10" stroke-linecap="round"/>
-    <path d="M706 456h112" stroke="#171b28" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
-    <rect x="706" y="406" width="78" height="34" rx="17" fill="#ebfff8"/>
-    <path d="M726 416h38" stroke="#35a99d" stroke-width="5" stroke-linecap="round"/>
-    <path d="M726 426h24" stroke="#35a99d" stroke-width="5" stroke-linecap="round"/>
+    <path d="M708 500h150" stroke="#21d7cb" stroke-width="10" stroke-linecap="round"/>
+    <path d="M708 474h106" stroke="#131826" stroke-width="10" stroke-linecap="round" opacity="0.88"/>
+    <rect x="706" y="404" width="82" height="36" rx="18" fill="#edfffb"/>
+    <path d="M726 418h42" stroke="#21a99f" stroke-width="5" stroke-linecap="round"/>
+    <path d="M726 428h26" stroke="#21a99f" stroke-width="5" stroke-linecap="round"/>
   </g>
 
-  <text x="116" y="620" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="#5632a7">AUTO DETAILING WEBSITE MOCKUP</text>
+  <g transform="translate(748 156)">
+    <path d="M0 88c64-40 136-40 200 0" fill="none" stroke="#10131e" stroke-width="18" stroke-linecap="round"/>
+    <path d="M26 88c50-32 102-32 152 0" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="52" fill="#0f1118" stroke="#bca2ff" stroke-width="6"/>
+    <path d="M80 100h40" stroke="#8cf2e5" stroke-width="8" stroke-linecap="round"/>
+    <path d="M100 80v40" stroke="#8cf2e5" stroke-width="8" stroke-linecap="round"/>
+    <path d="M56 146h88" stroke="#bca2ff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M36 190h128" stroke="#21d7cb" stroke-width="12" stroke-linecap="round"/>
+    <rect x="20" y="214" width="160" height="80" rx="22" fill="#10131e"/>
+    <rect x="34" y="230" width="132" height="12" rx="6" fill="#bca2ff"/>
+    <rect x="34" y="252" width="100" height="12" rx="6" fill="#8cf2e5"/>
+  </g>
+
+  <path d="M786 200h250" stroke="#ffffff" stroke-opacity="0.28" stroke-width="14" stroke-linecap="round"/>
+  <path d="M820 232l112 0" stroke="#ffffff" stroke-opacity="0.28" stroke-width="14" stroke-linecap="round"/>
+  <path d="M842 268l84 0" stroke="#ffffff" stroke-opacity="0.28" stroke-width="14" stroke-linecap="round"/>
+  <path d="M854 304l60 0" stroke="#ffffff" stroke-opacity="0.28" stroke-width="14" stroke-linecap="round"/>
+  <rect x="786" y="344" width="184" height="34" rx="17" fill="#ffffff" opacity="0.72"/>
+  <text x="878" y="367" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#5632a7" text-anchor="middle">PREMIUM WASH + CERAMIC</text>
+
+  <text x="114" y="620" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="#5632a7">AUTO DETAILING WEBSITE MOCKUP</text>
 </svg>
