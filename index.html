@@ -124,7 +124,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0.9rem 0;
       gap: 1rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
     .brand {
       display: inline-flex; align-items: center; gap: 0.9rem;
@@ -696,35 +696,31 @@
     }
 
     @media (max-width: 779px) {
-      .nav-actions .ghost-btn { display: none; }
-      .hero-inner { gap: 1.6rem; }
+      .brand {
+        gap: 0.65rem;
+        min-width: 0;
+      }
+      .brand-mark {
+        width: 2.45rem;
+        height: 2.45rem;
+      }
+      .brand-text strong {
+        font-size: 0.72rem;
+      }
       .brand-text span { display: none; }
-      .brand-text strong { font-size: var(--text-xs); }
-      .hero-cta-row a { flex: 1 1 auto; min-width: 170px; }
-      .hero-quick span { width: 100%; }
-      .metric-card { grid-template-columns: 1fr; }
-      .plan-tag { position: static; display: inline-flex; margin-bottom: 0.7rem; }
-      .pricing-grid .card p[style] { margin-top: 0 !important; }
+      .nav-actions {
+        margin-left: auto;
+      }
+      .nav-actions .primary-btn {
+        padding: 0.55rem 0.8rem;
+        min-height: 40px;
+        font-size: 0.76rem;
+      }
+      .hero-inner { gap: 1.6rem; }
       .sticky-cta {
-        bottom: max(0.55rem, env(safe-area-inset-bottom));
+        bottom: max(0.95rem, env(safe-area-inset-bottom));
       }
-      .sticky-cta-inner {
-        width: min(500px, calc(100% - 0.9rem));
-        padding: 0.85rem 0.9rem 0.95rem;
-        border-radius: 1.25rem;
-        display: grid;
-        gap: 0.7rem;
-      }
-      .sticky-cta-inner span {
-        flex: initial;
-        font-size: 0.84rem;
-        text-align: left;
-      }
-      .sticky-cta-inner .primary-btn {
-        width: 100%;
-        justify-content: center;
-      }
-      main { padding-bottom: 7rem; }
+      main { padding-bottom: 8rem; }
     }
 
     @media (max-width: 520px) {
