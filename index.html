@@ -389,36 +389,6 @@
       color: var(--color-text-muted);
       margin-top: 0.4rem;
     }
-    .demo-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    .demo-card {
-      overflow: hidden;
-      padding: 0;
-    }
-    .demo-card .mockup-frame {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      border: 0;
-      background: #fff;
-      border-bottom: 1px solid rgba(146, 177, 255, 0.12);
-    }
-    .demo-card .demo-copy {
-      padding: 1rem;
-      display: grid;
-      gap: 0.35rem;
-    }
-    .demo-card h3 { margin: 0; }
-    .demo-card .mockup-open {
-      display: inline-flex;
-      width: fit-content;
-      margin-top: 0.2rem;
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: 700;
-    }
     .preview-gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -993,34 +963,49 @@
       <section class="container" id="showcase">
         <div class="section-head">
           <span class="section-label">See What We Built</span>
-          <h2>Before a client ever signs, we build the mockup first.</h2>
-          <p class="demo-section-note">We build your free mockup before you ever pay a dollar.</p>
+          <h2>Live website screenshots from the mini-site demos.</h2>
+          <p class="demo-section-note">These are the real site images — no scrollable mockup windows in this section.</p>
         </div>
-        <div class="demo-grid grid-3">
-          <article class="card demo-card">
-            <iframe class="mockup-frame" src="mockups/roofing/index.html" title="Roofing business mockup website" loading="lazy"></iframe>
-            <div class="demo-copy">
-              <h3>Roofing company homepage</h3>
-              <p>Clear service stack, stronger trust signals, and a tighter mobile CTA.</p>
-              <a class="mockup-open" href="mockups/roofing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
+        <div class="preview-gallery">
+          <figure class="preview-card">
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">northpeakroofing.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/roofing-preview.png" alt="Screenshot preview of the roofing website demo" loading="eager" />
             </div>
-          </article>
-          <article class="card demo-card">
-            <iframe class="mockup-frame" src="mockups/plumbing/index.html" title="Plumbing business mockup website" loading="lazy"></iframe>
-            <div class="demo-copy">
-              <h3>Plumber service page</h3>
-              <p>Fast quote entry, visible emergency contact, and local proof above the fold.</p>
-              <a class="mockup-open" href="mockups/plumbing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
+            <figcaption>
+              <strong>Roofing website screenshot</strong>
+              <span>Full homepage image shown as a static preview.</span>
+            </figcaption>
+          </figure>
+          <figure class="preview-card">
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">rapidflowplumbing.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/plumbing-preview.png" alt="Screenshot preview of the plumbing website demo" loading="eager" />
             </div>
-          </article>
-          <article class="card demo-card">
-            <iframe class="mockup-frame" src="mockups/detailing/index.html" title="Auto detailing mockup website" loading="lazy"></iframe>
-            <div class="demo-copy">
-              <h3>Auto detailing landing page</h3>
-              <p>Before-and-after clarity for offers, pricing, and booking flow.</p>
-              <a class="mockup-open" href="mockups/detailing/index.html" target="_blank" rel="noreferrer">Open full demo ↗</a>
+            <figcaption>
+              <strong>Plumbing website screenshot</strong>
+              <span>Full homepage image shown as a static preview.</span>
+            </figcaption>
+          </figure>
+          <figure class="preview-card">
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">glosslineauto.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/detailing-preview.png" alt="Screenshot preview of the auto detailing website demo" loading="eager" />
             </div>
-          </article>
+            <figcaption>
+              <strong>Detailing website screenshot</strong>
+              <span>Full homepage image shown as a static preview.</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -1117,48 +1102,7 @@
           </article>
         </div>
         
-        <div class="preview-gallery">
-          <figure class="preview-card">
-            <div class="preview-shell">
-              <div class="preview-chrome">
-                <div class="preview-dots"><span></span><span></span><span></span></div>
-                <div class="preview-url">http://northpeakroofing.local</div>
-              </div>
-              <img class="preview-shot" src="assets/mockups/previews/roofing-preview.png" alt="Screenshot preview of the roofing website demo" loading="eager" />
-            </div>
-            <figcaption>
-              <strong>Roofing website screenshot</strong>
-              <span>Live site image of the full roofing homepage.</span>
-            </figcaption>
-          </figure>
-          <figure class="preview-card">
-            <div class="preview-shell">
-              <div class="preview-chrome">
-                <div class="preview-dots"><span></span><span></span><span></span></div>
-                <div class="preview-url">http://rapidflowplumbing.local</div>
-              </div>
-              <img class="preview-shot" src="assets/mockups/previews/plumbing-preview.png" alt="Screenshot preview of the plumbing website demo" loading="eager" />
-            </div>
-            <figcaption>
-              <strong>Plumbing website screenshot</strong>
-              <span>Live site image of the full plumbing homepage.</span>
-            </figcaption>
-          </figure>
-          <figure class="preview-card">
-            <div class="preview-shell">
-              <div class="preview-chrome">
-                <div class="preview-dots"><span></span><span></span><span></span></div>
-                <div class="preview-url">http://glosslineauto.local</div>
-              </div>
-              <img class="preview-shot" src="assets/mockups/previews/detailing-preview.png" alt="Screenshot preview of the auto detailing website demo" loading="eager" />
-            </div>
-            <figcaption>
-              <strong>Detailing website screenshot</strong>
-              <span>Live site image of the full detailing homepage.</span>
-            </figcaption>
-          </figure>
-        </div>
-<div class="setup-box">
+        <div class="setup-box">
           <h3>The deep clean before upkeep.</h3>
           <p>All plans begin with a one-time deep clean: claim and verify listings, fix wrong info, upload 10–15 good photos, clean up duplicates, and repair obvious website/mobile issues. After that, your chosen monthly tier begins.</p>
         </div>
