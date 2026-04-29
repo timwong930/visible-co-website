@@ -432,12 +432,48 @@
       background: rgba(12, 18, 34, 0.9);
       box-shadow: var(--shadow-soft);
     }
-    .preview-card img {
+    .preview-shell {
+      width: 100%;
+      background: #0b1020;
+      border-bottom: 1px solid rgba(146, 177, 255, 0.12);
+    }
+    .preview-chrome {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.8rem;
+      background: linear-gradient(180deg, #f3f6ff, #e9eefb);
+      border-bottom: 1px solid rgba(23, 45, 91, 0.08);
+    }
+    .preview-dots {
+      display: flex;
+      gap: 0.32rem;
+      flex: 0 0 auto;
+    }
+    .preview-dots span {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: #c5cfe4;
+    }
+    .preview-url {
+      flex: 1;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(23, 45, 91, 0.08);
+      color: #6b7590;
+      font-size: 0.7rem;
+      line-height: 1;
+      padding: 0.42rem 0.7rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .preview-shot {
       width: 100%;
       aspect-ratio: 16 / 10;
-      object-fit: cover;
       display: block;
-      border-bottom: 1px solid rgba(146, 177, 255, 0.12);
+      object-fit: cover;
     }
     .preview-card figcaption {
       padding: 0.85rem 0.95rem 1rem;
@@ -1081,24 +1117,42 @@
         
         <div class="preview-gallery">
           <figure class="preview-card">
-            <img src="assets/mockups/previews/roofing-preview.png" alt="Roofing website mockup preview" loading="lazy" decoding="async" />
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">http://northpeakroofing.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/roofing-preview.png" alt="Screenshot preview of the roofing website demo" loading="eager" />
+            </div>
             <figcaption>
-              <strong>Roofing preview</strong>
-              <span>Warm-toned hero with quote CTA and storm response cards.</span>
+              <strong>Roofing website preview</strong>
+              <span>Live website screenshot inside a browser-style frame.</span>
             </figcaption>
           </figure>
           <figure class="preview-card">
-            <img src="assets/mockups/previews/plumbing-preview.png" alt="Plumbing website mockup preview" loading="lazy" decoding="async" />
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">http://rapidflowplumbing.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/plumbing-preview.png" alt="Screenshot preview of the plumbing website demo" loading="eager" />
+            </div>
             <figcaption>
-              <strong>Plumbing preview</strong>
-              <span>Blue dispatch layout with emergency support and pipe repair.</span>
+              <strong>Plumbing website preview</strong>
+              <span>Live website screenshot inside a browser-style frame.</span>
             </figcaption>
           </figure>
           <figure class="preview-card">
-            <img src="assets/mockups/previews/detailing-preview.png" alt="Auto detailing website mockup preview" loading="lazy" decoding="async" />
+            <div class="preview-shell">
+              <div class="preview-chrome">
+                <div class="preview-dots"><span></span><span></span><span></span></div>
+                <div class="preview-url">http://glosslineauto.local</div>
+              </div>
+              <img class="preview-shot" src="assets/mockups/previews/detailing-preview.png" alt="Screenshot preview of the auto detailing website demo" loading="eager" />
+            </div>
             <figcaption>
-              <strong>Detailing preview</strong>
-              <span>Premium wash and ceramic package with car showcase art.</span>
+              <strong>Detailing website preview</strong>
+              <span>Live website screenshot inside a browser-style frame.</span>
             </figcaption>
           </figure>
         </div>
