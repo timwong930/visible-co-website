@@ -6,132 +6,188 @@
   <title>RapidFlow Plumbing</title>
   <style>
     :root {
-      --bg: #f1fbff;
-      --panel: rgba(255,255,255,0.92);
-      --text: #102033;
-      --muted: #5a6d86;
+      --bg: #edf9ff;
+      --panel: #ffffff;
+      --ink: #102033;
+      --muted: #5d7088;
       --accent: #1a76ff;
       --accent-2: #74f1ff;
-      --line: #c9effb;
-      --shadow: 0 24px 60px rgba(13, 46, 83, 0.18);
-      --radius: 26px;
+      --line: #c8ebf7;
+      --shadow: 0 22px 60px rgba(13, 46, 83, 0.14);
+      --radius: 28px;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
+      color: var(--ink);
       background:
-        radial-gradient(circle at 12% 0%, rgba(255,255,255,0.95) 0, rgba(255,255,255,0.16) 20%, transparent 21%),
-        radial-gradient(circle at 90% 8%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.08) 15%, transparent 16%),
-        linear-gradient(180deg, #dff8ff 0%, #84deff 54%, #166df3 100%);
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,0.96) 0, rgba(255,255,255,0.12) 18%, transparent 19%),
+        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.84) 0, rgba(255,255,255,0.05) 16%, transparent 17%),
+        linear-gradient(180deg, #dff8ff 0%, #89defd 56%, #166df3 100%);
     }
     .page { min-height: 100vh; padding: 16px; }
     .frame {
-      height: calc(100vh - 32px);
-      min-height: 720px; max-height: 780px;
-      border-radius: 34px;
+      min-height: calc(100vh - 32px);
+      max-width: 1260px;
+      margin: 0 auto;
       overflow: hidden;
-      background: #fff;
+      border-radius: 34px;
+      background: var(--panel);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.5);
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
+      border: 1px solid rgba(255,255,255,0.55);
     }
     .topbar {
       display: flex; align-items: center; justify-content: space-between; gap: 14px;
-      padding: 16px 22px; background: rgba(220, 247, 255, 0.94); border-bottom: 1px solid var(--line);
+      padding: 18px 24px; background: rgba(224, 247, 255, 0.96); border-bottom: 1px solid var(--line);
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .logo {
-      width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(145deg, #1a76ff, #74f1ff);
-      display: grid; place-items: center; color: white; font-weight: 900; box-shadow: 0 10px 24px rgba(26,118,255,0.24);
+    .mark {
+      width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center;
+      background: linear-gradient(145deg, #1a76ff, #74f1ff); color: #fff; font-weight: 900;
+      box-shadow: 0 10px 24px rgba(26,118,255,0.26);
     }
     .brand strong { display: block; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
     .brand span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .badgebar {
-      display: flex; gap: 10px; flex-wrap: wrap; padding: 0 22px 18px; background: linear-gradient(180deg, rgba(220,247,255,0.94), rgba(255,255,255,0));
-    }
-    .badgebar span {
-      padding: 8px 11px; border-radius: 999px; background: white; border: 1px solid var(--line);
-      color: #467291; font-size: 12px; font-weight: 700;
-    }
+    .actions { display: flex; align-items: center; gap: 10px; }
+    .pill { padding: 10px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 13px; font-weight: 700; color: #2460ad; text-decoration: none; }
+    .cta { padding: 11px 17px; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 800; background: var(--accent); color: #fff; box-shadow: 0 10px 24px rgba(26,118,255,0.24); }
     .hero {
-      padding: 0 22px 18px;
-      display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 18px;
+      align-items: stretch;
     }
-    .copy, .visual, .mini, .footer-note {
-      background: var(--panel);
-      border: 1px solid rgba(201, 239, 251, 0.95);
+    .copy, .visual, .grid, .reviews, .contact, .footer-note {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      backdrop-filter: blur(14px);
     }
     .copy { padding: 28px; }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px; width: fit-content;
-      padding: 7px 12px; border-radius: 999px; background: rgba(26,118,255,0.1);
-      color: #155fd2; font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 7px 12px; border-radius: 999px; background: rgba(26,118,255,0.1); color: #155fd2;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
     }
-    h1 { margin: 16px 0 12px; font-size: clamp(28px, 4vw, 46px); line-height: 0.96; letter-spacing: -0.04em; max-width: 12ch; }
-    .lead { margin: 0; color: var(--muted); line-height: 1.55; max-width: 35ch; font-size: 15px; }
-    .buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-    .btn { border-radius: 999px; padding: 11px 16px; font-size: 13px; font-weight: 800; text-decoration: none; }
-    .btn.primary { background: var(--accent); color: white; }
-    .btn.secondary { background: rgba(255,255,255,0.9); color: #155fd2; border: 1px solid var(--line); }
+    h1 { margin: 16px 0 12px; font-size: clamp(30px, 4vw, 48px); line-height: 0.95; letter-spacing: -0.05em; max-width: 12ch; }
+    .lead { margin: 0; max-width: 38ch; color: var(--muted); line-height: 1.58; font-size: 15px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 800; }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.secondary { background: #fff; color: #155fd2; border: 1px solid var(--line); }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .metric { padding: 12px; border-radius: 18px; background: #fff; border: 1px solid var(--line); }
+    .metric strong { display: block; font-size: 20px; letter-spacing: -0.03em; }
+    .metric span { color: var(--muted); font-size: 12px; }
     .visual { padding: 18px; display: grid; gap: 14px; }
     .dispatch {
       position: relative;
-      min-height: 212px;
-      border-radius: 24px;
-      background: linear-gradient(160deg, #0e1b2c, #143d67 58%, #0d1727 100%);
-      color: white;
-      padding: 18px;
+      min-height: 246px;
+      border-radius: 26px;
       overflow: hidden;
+      padding: 18px;
+      color: #fff;
+      background: linear-gradient(160deg, #0c1726, #17406a 55%, #0e1a2a 100%);
     }
     .dispatch::after {
-      content: ""; position: absolute; inset: auto -6% -16% auto; width: 54%; height: 60%;
+      content: "";
+      position: absolute; inset: auto -6% -16% auto; width: 62%; height: 62%;
       background:
-        radial-gradient(circle at 42% 35%, rgba(116,241,255,0.95) 0 7%, transparent 8%),
-        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.95) 0 7%, transparent 8%),
+        radial-gradient(circle at 28% 42%, rgba(116,241,255,0.95) 0 7%, transparent 8%),
+        radial-gradient(circle at 72% 42%, rgba(255,255,255,0.95) 0 7%, transparent 8%),
         linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-      clip-path: polygon(0 60%, 14% 38%, 35% 28%, 60% 28%, 82% 38%, 100% 60%, 100% 76%, 0 76%);
-      opacity: 0.95;
+      clip-path: polygon(0 64%, 16% 36%, 34% 26%, 60% 26%, 82% 36%, 100% 64%, 100% 82%, 0 82%);
+      opacity: 0.96;
     }
-    .dispatch h3 { margin: 0; font-size: 17px; }
-    .dispatch p { margin: 6px 0 14px; color: #b9d5ff; font-size: 13px; }
+    .dispatch h3 { margin: 0; font-size: 18px; position: relative; z-index: 1; }
+    .dispatch p { margin: 6px 0 14px; color: #bed5f6; font-size: 13px; position: relative; z-index: 1; }
     .queue { display: grid; gap: 10px; position: relative; z-index: 1; }
     .queue-row {
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 16px;
       background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px; padding: 10px 12px; font-size: 12px;
+      font-size: 12px;
     }
     .queue-row strong { font-size: 13px; }
-    .pill { padding: 5px 9px; border-radius: 999px; background: var(--accent); color: white; font-size: 11px; font-weight: 800; }
-    .hero-meters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .meter {
-      border-radius: 18px; padding: 12px; background: rgba(255,255,255,0.76); border: 1px solid var(--line);
-    }
-    .meter strong { display: block; font-size: 20px; letter-spacing: -0.03em; }
-    .meter span { color: var(--muted); font-size: 12px; }
+    .badge { padding: 5px 9px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; }
     .services {
-      padding: 0 22px 18px;
+      padding: 0 24px 18px;
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
     }
-    .mini { padding: 14px; min-height: 116px; }
-    .mini h4 { margin: 0 0 6px; font-size: 15px; }
-    .mini p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
-    .footer-note {
-      margin: 0 22px 22px; padding: 14px 16px;
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
-      background: rgba(255,255,255,0.82);
+    .service {
+      padding: 14px; min-height: 122px; border-radius: 22px; background: #fff; border: 1px solid var(--line);
     }
-    .footer-note strong { font-size: 13px; }
-    .footer-note span { color: var(--muted); font-size: 12px; }
-    .footer-note a { color: var(--accent); font-weight: 800; font-size: 12px; text-decoration: none; white-space: nowrap; }
+    .service h4 { margin: 0 0 6px; font-size: 15px; }
+    .service p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .service .tag { display: inline-flex; margin-top: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(26,118,255,0.08); color: #155fd2; font-size: 11px; font-weight: 800; }
+    .lower {
+      padding: 0 24px 18px;
+      display: grid; grid-template-columns: 1.18fr 0.82fr;
+      gap: 12px;
+    }
+    .map, .reviews {
+      padding: 16px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff;
+    }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+    .section-head strong { font-size: 14px; }
+    .section-head span { font-size: 12px; color: var(--muted); }
+    .map-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .map-panel, .info-panel {
+      min-height: 138px; border-radius: 18px; border: 1px solid var(--line); padding: 12px; background: linear-gradient(180deg, #f7fcff, #fff);
+    }
+    .map-panel {
+      background:
+        radial-gradient(circle at 38% 38%, rgba(26,118,255,0.18) 0 7%, transparent 8%),
+        radial-gradient(circle at 65% 55%, rgba(116,241,255,0.22) 0 10%, transparent 11%),
+        linear-gradient(180deg, #f2fbff, #dff6ff);
+      position: relative;
+      overflow: hidden;
+    }
+    .map-panel::before, .map-panel::after {
+      content: ""; position: absolute; background: rgba(16,32,51,0.1); border-radius: 999px;
+    }
+    .map-panel::before { width: 88%; height: 8px; left: 6%; top: 34%; }
+    .map-panel::after { width: 8px; height: 88%; left: 46%; top: 6%; }
+    .pin {
+      position: absolute; left: 60%; top: 42%; width: 28px; height: 28px; border-radius: 50% 50% 50% 0;
+      background: var(--accent);
+      transform: rotate(-45deg);
+      box-shadow: 0 10px 18px rgba(26,118,255,0.24);
+    }
+    .pin::after { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: #fff; }
+    .info-panel ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .info-panel li { display: flex; gap: 8px; color: #42526b; font-size: 12px; }
+    .info-panel li span:first-child { color: var(--accent); font-weight: 900; }
+    .review { padding-top: 12px; margin-top: 12px; border-top: 1px solid rgba(200,235,247,0.8); }
+    .review:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+    .stars { color: #f59b42; font-size: 13px; letter-spacing: 0.08em; }
+    .review p { margin: 6px 0 0; color: #4e5a70; font-size: 12px; line-height: 1.5; }
+    .contact {
+      margin: 0 24px 18px;
+      padding: 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, #0f1724, #173f67);
+      color: #fff; border: 0;
+    }
+    .contact strong { display: block; font-size: 16px; }
+    .contact span { color: #bfd2ef; font-size: 12px; }
+    .footer-note {
+      margin: 0 24px 24px;
+      padding: 12px 14px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      color: #5b657a; font-size: 12px;
+    }
+    .footer-note a { color: var(--accent); font-weight: 800; text-decoration: none; white-space: nowrap; }
     @media (max-width: 900px) {
-      .frame { height: auto; min-height: 0; }
-      .hero, .services, .hero-meters { grid-template-columns: 1fr; }
-      .topbar { flex-wrap: wrap; }
+      .hero, .lower { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+      .actions { display: none; }
+      .map-card { grid-template-columns: 1fr; }
+      .contact, .footer-note { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -140,35 +196,31 @@
     <div class="frame">
       <header class="topbar">
         <div class="brand">
-          <div class="logo">R</div>
+          <div class="mark">R</div>
           <div>
             <strong>RapidFlow Plumbing</strong>
             <span>Emergency 24/7 • drains • leak repair</span>
           </div>
         </div>
-        <a class="cta btn primary" href="#">Request service</a>
+        <div class="actions">
+          <a class="pill" href="#">Same-day dispatch</a>
+          <a class="cta" href="#contact">Request service</a>
+        </div>
       </header>
-
-      <div class="badgebar" aria-label="Highlights">
-        <span>Same-day dispatch</span>
-        <span>Licensed plumbers</span>
-        <span>Camera inspections</span>
-        <span>Water heater installs</span>
-      </div>
 
       <section class="hero">
         <article class="copy">
           <span class="eyebrow">24/7 emergency support</span>
           <h1>Plumbing help that actually answers fast.</h1>
-          <p class="lead">Burst pipe? no hot water? backup drain? The site pushes the emergency call and quote path immediately.</p>
+          <p class="lead">Clean scheduling, obvious emergency contact, and a website that makes it easy to call before a small problem becomes a big one.</p>
           <div class="buttons">
-            <a class="btn primary" href="#">Call now</a>
-            <a class="btn secondary" href="#">Book online</a>
+            <a class="btn primary" href="#contact">Call now</a>
+            <a class="btn secondary" href="#services">Book online</a>
           </div>
-          <div class="hero-meters" style="margin-top:18px;">
-            <div class="meter"><strong>8</strong><span>calls today</span></div>
-            <div class="meter"><strong>3</strong><span>urgent jobs</span></div>
-            <div class="meter"><strong>12</strong><span>active routes</span></div>
+          <div class="metrics">
+            <div class="metric"><strong>8</strong><span>calls today</span></div>
+            <div class="metric"><strong>3</strong><span>urgent jobs</span></div>
+            <div class="metric"><strong>12</strong><span>active routes</span></div>
           </div>
         </article>
         <aside class="visual">
@@ -176,7 +228,7 @@
             <h3>Dispatch board</h3>
             <p>Immediate response queue • live status • service ETA</p>
             <div class="queue">
-              <div class="queue-row"><strong>Leak under sink</strong><span class="pill">LIVE</span></div>
+              <div class="queue-row"><strong>Leak under sink</strong><span class="badge">LIVE</span></div>
               <div class="queue-row"><strong>Water heater install</strong><span>Today 2:30 PM</span></div>
               <div class="queue-row"><strong>Drain camera</strong><span>Next route</span></div>
             </div>
@@ -184,18 +236,46 @@
         </aside>
       </section>
 
-      <section class="services">
-        <article class="mini"><h4>Leak repair</h4><p>Clear problem-first messaging and instant contact.</p></article>
-        <article class="mini"><h4>Water heater</h4><p>Install and replacement service with pricing cues.</p></article>
-        <article class="mini"><h4>Drain cleaning</h4><p>Fast booking for slow drains, clogs, and backups.</p></article>
-        <article class="mini"><h4>Camera inspection</h4><p>Real diagnostic proof before big repairs start.</p></article>
+      <section class="services" id="services">
+        <article class="service"><h4>Leak repair</h4><p>Fast response for drips, slab leaks, and fixture problems.</p><span class="tag">Emergency</span></article>
+        <article class="service"><h4>Water heater</h4><p>Replacement and install support with pricing guidance.</p><span class="tag">Hot water</span></article>
+        <article class="service"><h4>Drain cleaning</h4><p>Clogs, backups, and camera inspection options.</p><span class="tag">Same-day</span></article>
+        <article class="service"><h4>Camera inspection</h4><p>See the problem before the repair starts.</p><span class="tag">Diagnosis</span></article>
+      </section>
+
+      <section class="lower">
+        <div class="map">
+          <div class="section-head"><strong>Service area</strong><span>Orange County + Inland Empire</span></div>
+          <div class="map-card">
+            <div class="map-panel">
+              <div class="pin" aria-hidden="true"></div>
+            </div>
+            <div class="info-panel">
+              <ul>
+                <li><span>•</span><span>Text a photo of the issue for a faster estimate</span></li>
+                <li><span>•</span><span>Upfront pricing before any work starts</span></li>
+                <li><span>•</span><span>Licensed plumbers with weekend availability</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="reviews">
+          <div class="section-head"><strong>Customer reviews</strong><span>Google + Yelp</span></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“They answered immediately and had the leak contained before lunch.”</p></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“The site made it obvious how to call, and the plumber was on time.”</p></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div>
+          <strong>Need a plumber right now?</strong>
+          <span>Call or send a quick note and we’ll get it on the board.</span>
+        </div>
+        <a class="btn primary" href="#">Request service</a>
       </section>
 
       <div class="footer-note">
-        <div>
-          <strong>RapidFlow Plumbing</strong><br />
-          <span>Built to feel like a real urgent-service website.</span>
-        </div>
+        <span>RapidFlow Plumbing — built to feel like a real urgent-service website.</span>
         <a href="#">Open full demo ↗</a>
       </div>
     </div>
