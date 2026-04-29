@@ -799,9 +799,9 @@
       }
       .hero-inner { gap: 1.6rem; }
       .sticky-cta {
-        bottom: max(0.95rem, env(safe-area-inset-bottom));
+        bottom: max(0.35rem, env(safe-area-inset-bottom));
       }
-      main { padding-bottom: 8rem; }
+      main { padding-bottom: 7.25rem; }
     }
 
     @media (max-width: 520px) {
@@ -816,8 +816,10 @@
       .nav-actions .ghost-btn, .nav-actions .pill-btn { display: none; }
       .sticky-cta-inner {
         width: min(100% - 0.8rem, 420px);
-        gap: 0.55rem;
-        padding: 0.6rem 0.65rem 0.6rem 0.75rem;
+        gap: 0.45rem;
+        padding: 0.55rem 0.6rem 0.55rem 0.7rem;
+        border-radius: 1.15rem;
+        box-shadow: 0 14px 36px rgba(0,0,0,0.26);
         flex-direction: row;
         align-items: center;
       }
