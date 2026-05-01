@@ -1,7 +1,7 @@
-# AI-CONTEXT: Madevisibly (Public, crawler-facing)
+# AI-CONTEXT: Made Visibly (Public, crawler-facing)
 
 ## Business snapshot
-- Brand: Madevisibly
+- Brand: Made Visibly
 - Offer: Local business marketing and visibility services
 - Core region: Southern California
 - Priority service areas: Orange County (OC), Los Angeles (LA), Inland Empire (IE)
