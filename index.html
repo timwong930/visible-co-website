@@ -944,7 +944,6 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      #three-container { display: none; }
       .bg-gradient { opacity: 1; }
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .reveal { opacity: 1; transform: none; transition: none; }
@@ -1376,7 +1375,6 @@
 
     (function () {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) return;
 
       const container = document.getElementById('three-container');
       if (!container || typeof THREE === 'undefined') return;
@@ -1392,7 +1390,7 @@
       container.appendChild(renderer.domElement);
 
       const isSmallScreen = window.matchMedia('(max-width: 779px)').matches;
-      const count = isSmallScreen ? 420 : 800;
+      const count = prefersReduced ? (isSmallScreen ? 180 : 320) : (isSmallScreen ? 420 : 800);
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(count * 3);
       const colors = new Float32Array(count * 3);
