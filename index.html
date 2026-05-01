@@ -286,6 +286,77 @@
       gap: 0.8rem;
       margin-top: 1.2rem;
     }
+    .hero-marquee {
+      margin-top: 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(146, 177, 255, 0.2);
+      background: linear-gradient(90deg, rgba(8,12,24,0.9), rgba(20,32,62,0.9), rgba(8,12,24,0.9));
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-marquee-track {
+      display: flex;
+      gap: 2.2rem;
+      padding: 0.52rem 1rem;
+      width: max-content;
+      animation: marqueeX 18s linear infinite;
+      font-size: var(--text-xs);
+      color: #d8e8ff;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero-marquee-track span::before {
+      content: '✦';
+      margin-right: 0.45rem;
+      color: var(--color-primary-strong);
+    }
+    .hero-energy {
+      margin-top: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(146, 177, 255, 0.18);
+      background: rgba(10, 14, 28, 0.82);
+    }
+    .hero-energy-label {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .eq-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 0.18rem;
+      height: 0.9rem;
+    }
+    .eq-bars i {
+      display: block;
+      width: 0.16rem;
+      border-radius: 0.2rem;
+      background: linear-gradient(180deg, #b8d1ff 0%, #5b8bff 100%);
+      animation: eqBounce 1s ease-in-out infinite;
+      transform-origin: bottom;
+    }
+    .eq-bars i:nth-child(1) { height: 0.35rem; animation-delay: 0s; }
+    .eq-bars i:nth-child(2) { height: 0.72rem; animation-delay: 0.12s; }
+    .eq-bars i:nth-child(3) { height: 0.48rem; animation-delay: 0.2s; }
+    .eq-bars i:nth-child(4) { height: 0.82rem; animation-delay: 0.28s; }
+    .eq-bars i:nth-child(5) { height: 0.55rem; animation-delay: 0.36s; }
+
+    @keyframes marqueeX {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes eqBounce {
+      0%, 100% { transform: scaleY(0.55); opacity: 0.72; }
+      50% { transform: scaleY(1.15); opacity: 1; }
+    }
     .hero-strip-row {
       display: flex;
       gap: 0.7rem;
@@ -853,6 +924,14 @@
         height: 1.15rem;
         margin-top: 0;
       }
+      .hero-marquee-track {
+        animation-duration: 24s;
+        letter-spacing: 0.04em;
+      }
+      .hero-energy {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     /* Scroll Reveal */
@@ -872,6 +951,7 @@
       .bg-gradient { opacity: 1; }
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-marquee-track { animation: none !important; }
     }
   </style>
 </head>
@@ -936,6 +1016,24 @@
                 <span>Clarify services, offers, and key business info</span>
                 <span>Build or improve websites for easy navigation</span>
                 <span>Manage updates and reputation across platforms</span>
+              </div>
+              <div class="hero-marquee" aria-hidden="true">
+                <div class="hero-marquee-track">
+                  <span>Google profile optimization</span>
+                  <span>Local SEO clarity</span>
+                  <span>Mobile-first UX cleanup</span>
+                  <span>Review flow improvements</span>
+                  <span>Conversion-first copy</span>
+                  <span>Google profile optimization</span>
+                  <span>Local SEO clarity</span>
+                  <span>Mobile-first UX cleanup</span>
+                  <span>Review flow improvements</span>
+                  <span>Conversion-first copy</span>
+                </div>
+              </div>
+              <div class="hero-energy" aria-hidden="true">
+                <span class="hero-energy-label">Live momentum</span>
+                <span class="eq-bars"><i></i><i></i><i></i><i></i><i></i></span>
               </div>
             </div>
           </div>
