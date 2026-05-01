@@ -299,7 +299,7 @@
       gap: 2.2rem;
       padding: 0.52rem 1rem;
       width: max-content;
-      animation: marqueeX 18s linear infinite;
+      animation: marqueeX 34s linear infinite;
       font-size: var(--text-xs);
       color: #d8e8ff;
       letter-spacing: 0.07em;
@@ -312,50 +312,9 @@
       margin-right: 0.45rem;
       color: var(--color-primary-strong);
     }
-    .hero-energy {
-      margin-top: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.45rem 0.7rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(146, 177, 255, 0.18);
-      background: rgba(10, 14, 28, 0.82);
-    }
-    .hero-energy-label {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .eq-bars {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.18rem;
-      height: 0.9rem;
-    }
-    .eq-bars i {
-      display: block;
-      width: 0.16rem;
-      border-radius: 0.2rem;
-      background: linear-gradient(180deg, #b8d1ff 0%, #5b8bff 100%);
-      animation: eqBounce 1s ease-in-out infinite;
-      transform-origin: bottom;
-    }
-    .eq-bars i:nth-child(1) { height: 0.35rem; animation-delay: 0s; }
-    .eq-bars i:nth-child(2) { height: 0.72rem; animation-delay: 0.12s; }
-    .eq-bars i:nth-child(3) { height: 0.48rem; animation-delay: 0.2s; }
-    .eq-bars i:nth-child(4) { height: 0.82rem; animation-delay: 0.28s; }
-    .eq-bars i:nth-child(5) { height: 0.55rem; animation-delay: 0.36s; }
-
     @keyframes marqueeX {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
-    }
-    @keyframes eqBounce {
-      0%, 100% { transform: scaleY(0.55); opacity: 0.72; }
-      50% { transform: scaleY(1.15); opacity: 1; }
     }
     .hero-strip-row {
       display: flex;
@@ -925,12 +884,8 @@
         margin-top: 0;
       }
       .hero-marquee-track {
-        animation-duration: 24s;
+        animation-duration: 42s;
         letter-spacing: 0.04em;
-      }
-      .hero-energy {
-        width: 100%;
-        justify-content: space-between;
       }
     }
 
@@ -1030,10 +985,6 @@
                   <span>Review flow improvements</span>
                   <span>Conversion-first copy</span>
                 </div>
-              </div>
-              <div class="hero-energy" aria-hidden="true">
-                <span class="hero-energy-label">Live momentum</span>
-                <span class="eq-bars"><i></i><i></i><i></i><i></i><i></i></span>
               </div>
             </div>
           </div>
