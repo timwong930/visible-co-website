@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="47E3090F-E864-4F16-B301-7580C500A83B.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     :root, [data-theme="dark"] {
@@ -44,8 +44,8 @@
       --radius-pill: 999px;
       --radius-lg: 1.6rem;
       --radius-card: 1.8rem;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Trispace', 'Inter', system-ui, sans-serif;
+      --font-body: 'Trispace', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       --content-max: 1160px;
     }
 
@@ -70,7 +70,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { overflow-x: hidden; width: 100%; margin: 0; }
-    html { scroll-behavior: smooth; text-size-adjust: none; }
+    html { scroll-behavior: smooth; text-size-adjust: none; background: #050816; }
     body {
       min-height: 100vh;
       font-family: var(--font-body);
@@ -814,9 +814,35 @@
     }
 
     @media (max-width: 779px) {
+      .container {
+        text-align: center;
+      }
+      .section-head,
+      .hero-inner,
+      .hero-heading,
+      .hero-meta,
+      .hero-cta-row,
+      .hero-quick,
+      .hero-strip,
+      .hero-strip-row,
+      .hero-strip-pills,
+      .flow-steps,
+      .footer-inner {
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin-inline: auto;
+      }
+      .hero-quick span,
+      .hero-strip-pills span {
+        margin-inline: auto;
+      }
       .brand {
         gap: 0.65rem;
         min-width: 0;
+      }
+      header.nav {
+        padding-top: env(safe-area-inset-top);
       }
       .brand-mark {
         width: 2.45rem;
@@ -886,6 +912,12 @@
       .hero-marquee-track {
         animation-duration: 42s;
         letter-spacing: 0.04em;
+      }
+      .hero-marquee {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0;
       }
     }
 
