@@ -662,6 +662,40 @@
       gap: 1rem;
     }
 
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.85rem;
+    }
+    .audience-tile {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      background: rgba(14, 20, 39, 0.82);
+      padding: 0.95rem 0.95rem 0.9rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 0.55rem;
+      align-content: start;
+      min-height: 7.2rem;
+    }
+    .audience-icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(74, 125, 255, 0.14);
+      border: 1px solid rgba(125, 167, 255, 0.18);
+      font-size: 1.05rem;
+    }
+    .audience-tile strong {
+      display: block;
+      font-size: var(--text-sm);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
     .card, .metric-card, .flow-card, .lead-card {
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     }
@@ -1140,6 +1174,22 @@
             <span style="display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.7rem; border-radius: var(--radius-pill); background: rgba(14, 20, 39, 0.8); color: var(--color-text-faint); font-size: var(--text-xs); font-weight: 600;">📞 Free 15-min audit — no obligation</span>
           </div>
         </article>
+      </section>
+
+      <section class="container" id="who-we-help">
+        <div class="section-head">
+          <span class="section-label">Who We Help</span>
+          <h2>Clean, practical marketing support for local service businesses.</h2>
+          <p>Built for owner-operated teams that need to look sharper, get found more often, and turn more searches into calls.</p>
+        </div>
+        <div class="audience-grid" aria-label="Who we help">
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">❄️</div><strong>HVAC &amp; Plumbers</strong></article>
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">🏠</div><strong>Roofers &amp; Contractors</strong></article>
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">⚡</div><strong>Electricians</strong></article>
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">🌿</div><strong>Landscapers</strong></article>
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">🚗</div><strong>Auto Detailers</strong></article>
+          <article class="audience-tile"><div class="audience-icon" aria-hidden="true">🛠️</div><strong>Handymen</strong></article>
+        </div>
       </section>
 
       <section class="container" id="services">
