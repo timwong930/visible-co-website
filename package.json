@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Static site with Vercel Serverless Functions",
   "dependencies": {
-    "@notionhq/client": "^2.2.14"
+    "@notionhq/client": "^2.2.14",
+    "resend": "^6.12.2"
   }
 }
