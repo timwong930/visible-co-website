@@ -59,6 +59,7 @@
 - Hero: SoCal positioning + local SEO / GBP / conversion framing
 - Services: visibility, website clarity, reputation and presence management
 - Pricing: Starter / Growth / Premium tiers with clear setup fees
+- Starter includes a custom designed website
 - Contact: audit CTA + direct email
 
 ## Technical notes

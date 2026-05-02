@@ -662,7 +662,7 @@
       gap: 1rem;
     }
 
-    .card, .metric-card, .flow-card, .lead-card, .setup-box {
+    .card, .metric-card, .flow-card, .lead-card {
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     }
     .card:hover, .metric-card:hover, .flow-card:hover, .lead-card:hover {
@@ -715,21 +715,6 @@
       box-shadow: 0 24px 60px rgba(13, 31, 74, 0.18), 0 0 0 1px rgba(125, 167, 255, 0.16);
       transform: translateY(-4px);
     }
-
-    .setup-box {
-      margin-top: 1.1rem;
-      border-radius: var(--radius-card);
-      border: 1px dashed rgba(125, 167, 255, 0.42);
-      background: rgba(14, 20, 39, 0.9);
-      padding: 1rem 1.1rem;
-      box-shadow: var(--shadow-soft);
-    }
-    .setup-box h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-    .setup-box p { color: var(--color-text-muted); font-weight: 500; font-size: var(--text-sm); }
 
     .faq-grid .card {
       padding: 0.9rem 1.05rem;
@@ -949,7 +934,7 @@
         font-size: clamp(2.15rem, 11vw, 3rem);
         line-height: 1.04;
       }
-      .card, .lead-card, .flow-card, .metric-card, .setup-box { padding: 1rem; }
+      .card, .lead-card, .flow-card, .metric-card { padding: 1rem; }
       .nav-actions .ghost-btn, .nav-actions .pill-btn { display: none; }
       .sticky-cta-inner {
         width: min(100% - 0.8rem, 420px);
@@ -1054,7 +1039,7 @@
                 </span>
                 <span>
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-6 7-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.18"/></svg>
-                  <span class="quick-copy">Built for single or multi-location teams</span>
+                  <span class="quick-copy">Built for local service teams</span>
                 </span>
                 <span>
                   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-6 7-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.18"/></svg>
@@ -1202,6 +1187,7 @@
             <ul>
               <li><span>•</span><span>Google Business Profile fully optimised</span></li>
               <li><span>•</span><span>Yelp listing updated & verified</span></li>
+              <li><span>•</span><span>Custom designed website</span></li>
               <li><span>•</span><span>Monthly audit & update check</span></li>
               <li><span>•</span><span>Up to 10 review responses/month</span></li>
             </ul>
@@ -1244,10 +1230,6 @@
           </article>
         </div>
 
-        <div class="setup-box">
-          <h3>Multiple locations?</h3>
-          <p>Ask about our add-on pricing.</p>
-        </div>
       </section>
 
       <section class="container" id="faq">
@@ -1267,12 +1249,6 @@
             <details>
               <summary><span>Can you improve our current site, or do we need a rebuild?</span><span>+</span></summary>
               <p>Not always. We start by fixing what hurts customers most: outdated info, confusing service pages, slow mobile experience, and messy listings. If a rebuild makes more sense, we'll explain why and when.</p>
-            </details>
-          </article>
-          <article class="card faq">
-            <details>
-              <summary><span>How do you handle businesses with multiple locations or teams?</span><span>+</span></summary>
-              <p>Each location has its own profile, offers, and reputation signals, so we treat each as its own visibility profile with a smaller add-on fee per location.</p>
             </details>
           </article>
           <article class="card faq">
@@ -1357,7 +1333,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Reveal Animations Setup
-      const elementsToReveal = document.querySelectorAll('.hero-inner > div, .section-head, .card, .metric-card, .flow-card, .lead-card, .setup-box');
+      const elementsToReveal = document.querySelectorAll('.hero-inner > div, .section-head, .card, .metric-card, .flow-card, .lead-card');
       
       elementsToReveal.forEach((el) => {
         el.classList.add('reveal');
