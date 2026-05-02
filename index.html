@@ -110,10 +110,8 @@
       line-height: 1.6;
       color: var(--color-text); font-weight: 500;
       background:
-        radial-gradient(circle at 15% 0%, rgba(65, 98, 190, 0.14) 0, transparent 28%),
-        radial-gradient(circle at 85% 10%, rgba(39, 61, 117, 0.1) 0, transparent 28%),
-        radial-gradient(circle at 50% 0%, rgba(2, 3, 5, 0.96) 0, transparent 56%),
-        linear-gradient(180deg, #020305 0%, #05070d 46%, #020305 100%);
+        radial-gradient(circle at 50% 0%, rgba(2, 3, 5, 0.98) 0, transparent 48%),
+        linear-gradient(180deg, #020305 0%, #05070a 54%, #020305 100%);
     }
     a { color: inherit; text-decoration: none; }
     img, canvas, svg { display: block; max-width: 100%; }
@@ -124,7 +122,7 @@
 
     #three-container {
       position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
-      opacity: 0.5;
+      opacity: 0.18;
     }
 
     .container {
@@ -1522,11 +1520,11 @@
         positions[i3 + 1] = (Math.random() - 0.5) * 45;
         positions[i3 + 2] = (Math.random() - 0.5) * 35;
 
-        // Gentle navy-to-blue tint range
+        // Gentle neutral-to-cool tint range
         const t = Math.random();
-        colors[i3] = 0.06 + t * 0.14;
-        colors[i3 + 1] = 0.16 + t * 0.28;
-        colors[i3 + 2] = 0.34 + t * 0.5;
+        colors[i3] = 0.18 + t * 0.08;
+        colors[i3 + 1] = 0.18 + t * 0.08;
+        colors[i3 + 2] = 0.2 + t * 0.12;
 
         scales[i] = 0.6 + Math.random() * 1.4;
       }
