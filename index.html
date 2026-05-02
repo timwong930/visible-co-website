@@ -122,7 +122,7 @@
 
     #three-container {
       position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
-      opacity: 0.18;
+      opacity: 0.28;
     }
 
     .container {
@@ -1520,11 +1520,11 @@
         positions[i3 + 1] = (Math.random() - 0.5) * 45;
         positions[i3 + 2] = (Math.random() - 0.5) * 35;
 
-        // Gentle neutral-to-cool tint range
+        // Gentle off-white pixel range
         const t = Math.random();
-        colors[i3] = 0.18 + t * 0.08;
-        colors[i3 + 1] = 0.18 + t * 0.08;
-        colors[i3 + 2] = 0.2 + t * 0.12;
+        colors[i3] = 0.82 + t * 0.08;
+        colors[i3 + 1] = 0.83 + t * 0.07;
+        colors[i3 + 2] = 0.86 + t * 0.06;
 
         scales[i] = 0.6 + Math.random() * 1.4;
       }
