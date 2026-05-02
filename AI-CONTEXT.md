@@ -58,8 +58,8 @@
 ## Page structure notes
 - Hero: SoCal positioning + local SEO / GBP / conversion framing
 - Services: visibility, website clarity, reputation and presence management
-- Plans: transparent tiers and setup framing
-- Contact: calendly CTA + direct email
+- Pricing: Starter / Growth / Premium tiers with clear setup fees
+- Contact: audit CTA + direct email
 
 ## Technical notes
 - Canonical URL: `https://madevisibly.com/`
