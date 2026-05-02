@@ -723,9 +723,19 @@
       margin-bottom: 0.4rem;
     }
     .card p { color: var(--color-text-muted); font-weight: 500; }
-    .card ul { list-style: none; margin-top: 0.7rem; display: grid; gap: 0.5rem; font-size: var(--text-sm); }
-    .card li { display: flex; gap: 0.5rem; }
-    .card li span:first-child { color: var(--color-primary-strong); }
+    .card ul,
+    .lead-card ul {
+      list-style: none;
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 0.5rem;
+      font-size: var(--text-sm);
+      padding-left: 0;
+    }
+    .card li,
+    .lead-card li { display: flex; gap: 0.5rem; }
+    .card li span:first-child,
+    .lead-card li span:first-child { color: var(--color-primary-strong); }
 
     .pricing-grid .card {
       position: relative;
@@ -1369,7 +1379,7 @@
               <li><span>•</span><span>Plan recommendation based on goals and budget</span></li>
               <li><span>•</span><span>No-pressure guidance from audit to rollout</span></li>
             </ul>
-            <p style="margin-top: 1rem; color: var(--color-text-faint); font-size: var(--text-xs);">You’ll get a tailored recommendation during the audit.</p>
+            <a href="https://calendly.com/madevisibly/free-15-min-audit" class="primary-btn" style="width:100%; margin-top:1rem;">Book a Free Local Visibility Audit</a>
           </article>
         </div>
       </section>
